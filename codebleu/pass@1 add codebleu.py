@@ -7,7 +7,7 @@ csv.field_size_limit(sys.maxsize)
 
 # Step 1: read ground-truth.csv, create {problem_name: (reference_code, num_threads)}
 ground_truth = {}
-with open('ground-truth1.csv', 'r', encoding='utf-8') as gt_file:
+with open('ground-truth.csv', 'r', encoding='utf-8') as gt_file:
     reader = csv.reader(gt_file)
     for row in reader:
         if len(row) >= 3:
