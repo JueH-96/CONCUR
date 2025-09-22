@@ -1,0 +1,533 @@
+Topic,Prompt
+Thread-safe mutable integer holder.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a thread-safe class in Java that holds a mutable integer value. The class should have methods to get and set the value, both of which must be synchronized to ensure safe access and modification from multiple threads. Use internal locking (synchronized methods) to protect the integrity of the shared state. The requirements are as follows:
+  
+  All classes and methods must be defined within a single .java file;
+  The program must include a public static void main(String[] args) method as the entry point;
+  No external libraries or dependencies should be used;
+  The code should be clear, well-structured, and follow Java 8 syntax standards;
+  If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+  The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary.
+  Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+  The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+  Do not add any annotations. "
+Counting sheep.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a Java program that simulates a person trying to fall asleep by repeatedly counting sheep. The program should include a class with a volatile boolean variable called ""asleep"" to indicate whether the person is asleep. It should also have a method named ""tryToSleep"" which contains a loop that continues as long as ""asleep"" is false. Inside the loop, it should call another method named ""countSomeSheep"". Implement the ""countSomeSheep"" method to represent the action of counting sheep, though its exact implementation can be left empty or contain a simple comment indicating the counting action. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools.
+Do not add any annotations."
+Publishing an object.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java class named Secrets that contains a static Set of objects of type Secret. This set should be initialized with a new instance of HashSet in a method called initialize(). Also, define an empty class named Secret. The goal is for the knownSecrets set to be accessible globally through the Secrets class and be able to store multiple instances of the Secret class. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Using a factory method to prevent the this reference from escaping during construction.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java class called SafeListener that securely registers an event listener with an event source. The class should have a private constructor and a static factory method called newInstance, which takes an EventSource object as a parameter, creates an instance of SafeListener, registers a new EventListener with the provided event source, and returns the created SafeListener instance. The EventListener should be implemented in such a way that when its onEvent method is called, it invokes a method named doSomething on the SafeListener instance. Also include empty definitions for the EventSource, EventListener, and Event interfaces so that the code compiles correctly. Ensure that the listener registration is done safely to prevent leaks or improper access. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+The total number of threads used in the program, including the main thread, must not exceed 2. Use a fixed thread pool or manually manage at most 1 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Thread confinement of local primitive and reference variables.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java program that models the process of loading animals onto an ark in pairs. The program should define classes and enums representing animals, their species and gender, and a mechanism for pairing animals based on species and gender compatibility. Each animal has a species and gender, and only animals of the same species and opposite genders can form a pair.
+
+The main logic is implemented in a method called loadTheArk, which takes a collection of candidate animals as input and returns the number of valid pairs formed. Inside this method, animals are sorted using a custom comparator that orders them first by species and then by gender. This ensures that animals of the same species and opposite genders are grouped together for pairing.
+
+Additionally, implement a class to represent the ark that can store these animal pairs, and a helper class to represent each pair of animals. Ensure proper encapsulation and thread confinement of variables within the method, preventing any unintended side effects or data sharing between threads. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Immutable class built out of mutable underlying objects.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java class named ThreeStooges that represents an immutable collection of names belonging to the Three Stooges (Moe, Larry, and Curly). The class should use a Set internally to store these names and provide a method to check if a given name is one of the Stooges. Additionally, include a method that returns a string representation of all Stooge names in list format. Ensure that the internal collection remains immutable from the outside, even though it is built using mutable objects. The requirements are as follows:
+  
+  All classes and methods must be defined within a single .java file;
+  The program must include a public static void main(String[] args) method as the entry point;
+  No external libraries or dependencies should be used;
+  The code should be clear, well-structured, and follow Java 8 syntax standards;
+  If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+ The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+  Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+  The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+  Do not add any annotations. "
+Immutable holder for caching a number and its factors.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java class that represents an immutable cache for storing a number and its factors. The class should store a single number as a BigInteger and its corresponding factors as an array of BigInteger. It should provide a method to retrieve the cached factors if the input number matches the stored number, otherwise return null. The returned factors array should be a copy to prevent modification of the internal state. Ensure thread safety by making the class immutable using appropriate patterns. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Caching the last result using a volatile reference to an immutable holder object.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java servlet that caches the result of a computation using a volatile reference to an immutable cache object. The servlet should handle requests by extracting a BigInteger value from the request, checking if the cached result matches the input value, and if not, recompute the result and update the cache. The computation in this case is a placeholder that simply returns the input value as a single-element array. The cache should be thread-safe and implemented as an immutable helper class. Use a volatile variable to hold the cache reference to ensure visibility across threads. Include appropriate annotations and structure to indicate thread safety. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Using confinement to ensure thread safety.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a thread-safe Java class called PersonSet that uses synchronization to ensure safe concurrent access to a set of Person objects. The class should encapsulate a Set<Person> variable, initialized as a HashSet. It should provide two synchronized methods: one to add a Person object to the set, and another to check if the set contains a specific Person object. Additionally, define the Person interface as a nested type within the class. The requirements are as follows:
+  
+  All classes and methods must be defined within a single .java file;
+  The program must include a public static void main(String[] args) method as the entry point;
+  No external libraries or dependencies should be used;
+  The code should be clear, well-structured, and follow Java 8 syntax standards;
+  If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+ The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+  Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+  The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+  Do not add any annotations. "
+Guarding state with a private lock.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java class that encapsulates an object and uses a private lock to synchronize access to it. The class should have a member variable representing some state (e.g., a Widget object), which is guarded by the private lock. Include a method where critical sections are protected using the synchronized keyword on the private lock, ensuring thread-safe access or modification of the guarded state. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Immutable Point class used by DelegatingVehicleTracker.,"Please write a concurrent program in Java 8 that implements the following functionality: Create an immutable class named Point that represents a coordinate in a two-dimensional space. The class should have two public final fields, x and y, both of type int, to store the coordinates. The class should include a constructor that takes two integer parameters to initialize the x and y values. Ensure that no methods are added that could modify the state of the object after creation. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+The total number of threads used in the program, including the main thread, must not exceed 6. Use a fixed thread pool or manually manage at most 5 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Delegating thread safety to a ConcurrentHashMap.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java class called DelegatingVehicleTracker that manages the locations of vehicles in a thread-safe manner. The class should use a ConcurrentHashMap to store vehicle locations, where each vehicle is identified by a unique String ID and its current location is represented by a Point object. Provide the following functionality:
+
+A constructor that accepts an initial Map of vehicle IDs to Points and initializes the internal concurrent map with these values.
+A method getLocations() that returns an unmodifiable view of the current vehicle locations to prevent external modification.
+A method getLocation(String id) that returns the current location of the specified vehicle or null if the vehicle does not exist.
+A method setLocation(String id, int x, int y) that updates the location of an existing vehicle with the given ID to the new coordinates (x, y). If the vehicle does not exist, this method should throw an appropriate exception such as IllegalArgumentException.
+An alternative method getLocationsAsStatic() that returns a snapshot of the current locations as an unmodifiable Map to provide a consistent view of all locations at the time of invocation.
+Ensure that all operations are thread-safe without requiring additional synchronization in the class. Use standard Java libraries for concurrency and collections. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+The total number of threads used in the program, including the main thread, must not exceed 6. Use a fixed thread pool or manually manage at most 5 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Returning a static copy of the location set instead of a 'live' one.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java class called DelegatingVehicleTracker that manages the locations of vehicles in a thread-safe manner using a ConcurrentHashMap. The class should provide methods to get the location of a specific vehicle, set the location of a vehicle, and return an unmodifiable view of all vehicle locations. Use delegation to ensure thread safety without explicitly synchronizing methods. Initialize the tracker with a map of vehicle IDs to their initial locations. Include two versions of the method to retrieve all locations: one that returns a live unmodifiable map backed by the original data, and another that returns a static snapshot of the current state as an unmodifiable map. Ensure that updating a vehicle's location only succeeds if the vehicle ID already exists in the map. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Vehicle tracker that safely publishes underlying state.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java class called PublishingVehicleTracker that manages the locations of vehicles in a thread-safe manner. The class should allow safe publication of its internal state to prevent unintended modifications from external code. Use a thread-safe map implementation to store vehicle locations, where each entry maps a vehicle ID (String) to a SafePoint object that represents its current coordinates. Provide an unmodifiable view of the full location map for external access. Include methods to retrieve the full map of vehicle locations, get the location of a specific vehicle by ID, and update the location of a vehicle by setting its x and y coordinates. Ensure that attempting to update a non-existent vehicle throws an appropriate exception. The design should follow best practices for encapsulation and thread safety. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else.
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Implementing put-if-absent using composition.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java class named ImproveList that implements the List interface and enhances it by providing a thread-safe putIfAbsent method. The class should wrap an existing List instance, which is provided via the constructor. All methods of the List interface should delegate to the underlying list. Ensure that all mutative operations (e.g., add, remove, addAll, etc.) are synchronized to maintain atomicity, especially for the putIfAbsent method. The putIfAbsent method should check if the specified element is already present in the list; if not, it should add the element and return true, otherwise return false. Make sure the class is properly documented and follows good design practices. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Using CountDownLatch for starting and stopping threads in timing tests.,"Please write a concurrent program in Java 8 that implements the following functionality: The Java 8 multi-threading performance testing tool utilizes CountDownLatch for thread synchronization and execution timing. The core method timeTasks accepts the number of threads and a task logic, employing two CountDownLatch instances (a ""start gate"" for synchronized thread initiation and an ""end gate"" for completion waiting) to ensure all threads begin simultaneously and the main thread waits for their completion. High-precision timing is achieved with System.nanoTime(), while manual thread creation and Lambda expressions implement the task logic. The design handles thread interruption by preserving the interrupt status and supports functional extension through arbitrary Runnable task inputs. This structure enables accurate measurement of parallel execution performance in scenarios like simulated workload testing. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 2. Use a fixed thread pool or manually manage at most 1 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Using FutureTask to preload data that is needed later.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a Java class called Preloader that simulates the preloading of data using a separate thread. The class should use a FutureTask to perform the data loading asynchronously and provide two main operations: a method to start the background task and another to retrieve the result of the task when needed.
+
+The class should include:
+
+A method ProductInfo loadProductInfo() which simulates loading data and may throw a custom exception called DataLoadException.
+A FutureTask that wraps a Callable to execute the loadProductInfo method in the background.
+A dedicated Thread instance to run the FutureTask.
+A start() method to begin the execution of the background task.
+A get() method that returns the loaded ProductInfo and propagates any exceptions thrown during the loading process, including properly handling and rethrowing them (e.g., wrapping unexpected exceptions using a utility-like approach).
+Also define:
+
+An interface ProductInfo as a placeholder for the loaded data type.
+A custom exception class DataLoadException that extends Exception.
+Ensure the code is structured to be non-blocking during data loading but blocks only when retrieving the result via get(), and correctly handles error propagation from the background task. Write a Java class called Preloader that simulates the preloading of data using a separate thread. The class should use a FutureTask to perform the data loading asynchronously and provide two main operations: a method to start the background task and another to retrieve the result of the task when needed.
+
+The class should include:
+
+A method ProductInfo loadProductInfo() which simulates loading data and may throw a custom exception called DataLoadException.
+A FutureTask that wraps a Callable to execute the loadProductInfo method in the background.
+A dedicated Thread instance to run the FutureTask.
+A start() method to begin the execution of the background task.
+A get() method that returns the loaded ProductInfo and propagates any exceptions thrown during the loading process, including properly handling and rethrowing them (e.g., wrapping unexpected exceptions using a utility-like approach).
+Also define:
+
+An interface ProductInfo as a placeholder for the loaded data type.
+A custom exception class DataLoadException that extends Exception.
+Ensure the code is structured to be non-blocking during data loading but blocks only when retrieving the result via get(), and correctly handles error propagation from the background task. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 2. Use a fixed thread pool or manually manage at most 1 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Using a volatile field to hold cancellation state.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a Java program that generates prime numbers in a separate thread for a duration of one second, then cancels the generation and returns the list of found primes. Use a volatile variable to manage the cancellation state, ensure thread-safe access to the shared list of primes, and utilize an ExecutorService to run the task in a separate thread. The program should include a method to retrieve the collected prime numbers and properly cancel the computation after one second has elapsed. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 2. Use a fixed thread pool or manually manage at most 1 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Generating a second's worth of prime numbers.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a Java program that generates prime numbers in a separate thread for a duration of one second and then cancels the generation process. The program should use a volatile variable to manage the cancellation state, store the generated first 10 prime numbers in a thread-safe list, and provide a method to retrieve the collected primes. Use an ExecutorService or Thread to manage the thread execution. The PrimeGenerator class should implement Runnable, include methods to start and cancel the generation, and ensure proper synchronization when accessing shared data. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 2. Use a fixed thread pool or manually manage at most 1 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Using interruption for cancellation.,"Please write a concurrent program in Java 8 that implements the following functionality: ""Write a Java 8 program that uses a BlockingQueue to implement a producer-consumer pattern for generating and consuming prime numbers. The program should: 
+
+Define a PrimeProducer class that extends Thread.
+The producer should generate a specified number of prime numbers using BigInteger.nextProbablePrime() and put them into the queue.
+It should stop when it has produced the requested number of primes or if interrupted.
+A consumer thread should read from the same queue, print each prime number as it is consumed, and stop after processing all generated primes.
+The main method should start both threads, wait for the consumer to finish, then signal the producer to stop and wait for it to finish.
+Use proper error handling for interruptions.
+Make sure the code is thread-safe and uses Java 8 features appropriately."" 
+Ensure proper handling of thread interruption to allow clean termination. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Waiting for results to be calculated in parallel.,"Please write a concurrent program in Java 8 that implements the following functionality: Write Java code that transforms sequential execution into parallel execution using an Executor. The code should include two main processing methods: one that processes a list of elements sequentially by iterating and processing each element in turn, and another that submits each element for parallel processing via an executor. Additionally, implement recursive versions of both sequential and parallel processing methods that traverse a tree structure of nodes, computing results and collecting them in a thread-safe manner. The parallel version should properly utilize an ExecutorService to execute tasks concurrently, ensure all tasks complete before returning the final result collection, and use appropriate concurrency utilities for thread safety. Define interfaces Element and Node, where Node supports computation and retrieval of child nodes. Ensure the design follows good abstraction principles and includes proper generic typing. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary.
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Inducing a lock ordering to avoid deadlock.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a Java program that performs a thread-safe money transfer between two accounts while avoiding deadlock by inducing a consistent lock ordering. The program should use the account object's identity hash code to determine the lock acquisition order. If both accounts have the same hash code, introduce a secondary tie-breaking lock to ensure consistent locking and prevent deadlock. Implement a helper class to carry out the actual transfer logic, which checks for sufficient funds before performing the debit and credit operations. Define interfaces for Account and DollarAmount, and include an exception class for insufficient funds scenarios. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Candidate for lock elision.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java class named ThreeStooges that represents an immutable collection of the names of the Three Stooges: ""Moe"", ""Larry"", and ""Curly"". The class should provide two methods:
+
+A method isStooge(String name) that returns true if the given name is one of the Three Stooges, and false otherwise.
+A method getStoogeNames() that returns a string representation of a list containing the names of the Three Stooges in the order ""Moe"", ""Larry"", ""Curly"".
+Ensure that all fields are properly encapsulated and that the class cannot be modified after construction. Do not make the class thread-unsafe; however, avoid unnecessary synchronization where possible. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Hash-based map using lock striping.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java class called StripedMap that implements a hash-based map using lock striping for concurrency control. The map should use an array of buckets to store key-value pairs, and an array of lock objects to synchronize access to the buckets. Each bucket at index n should be guarded by the lock at index n % N_LOCKS, where N_LOCKS is a constant set to 16. Implement a static inner class Node to represent entries in the map, with fields for the key, value, and a reference to the next node in case of collisions. Include a constructor that initializes the number of buckets, and methods for computing the hash index, retrieving values based on a key, and clearing all entries from the map. Ensure thread safety by synchronizing on the appropriate lock object in both the get and clear methods. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 5. Use a fixed thread pool or manually manage at most 4 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Bounded buffer using Semaphore.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java implementation of a bounded buffer (circular buffer) using semaphores for synchronization. The buffer should support concurrent access from multiple threads, ensuring thread-safe insertion and removal operations. Use two semaphores to track the number of available items and remaining spaces in the buffer. Implement methods put(E x) to insert an item into the buffer and take() to remove and return an item from the buffer, both blocking when necessary until space or data becomes available. Also include helper methods isEmpty() and isFull() to check the current state of the buffer. Ensure that internal buffer manipulation is synchronized to prevent race conditions during concurrent access. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Avoiding lock-ordering deadlock using try Lock.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a Java program that implements a deadlock avoidance mechanism for transferring money between two accounts. The program should use ReentrantLock to prevent deadlocks when acquiring locks on the source and destination accounts. Instead of blocking indefinitely, the implementation should utilize the tryLock() method with a timeout and random backoff strategy to attempt acquiring the locks. If both account locks are successfully acquired, the transfer should proceed only if the source account has sufficient funds; otherwise, an InsufficientFundsException is thrown. If the timeout period elapses before both locks can be acquired, the method should return false. The transfer method should accept parameters for the source account, destination account, amount to transfer, timeout duration, and time unit. Additionally, include nested classes for DollarAmount and Account, along with the custom exception InsufficientFundsException. Implement helper methods for calculating fixed and random delay components to be used before retrying the lock acquisition. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Wrapping a Map with a read-write lock.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java class called ReadWriteMap that wraps a standard Map and provides thread-safe access using a read-write lock mechanism. The class should allow multiple readers or a single writer at any given time. Use ReentrantReadWriteLock from the java.util.concurrent.locks package to control access. For all write operations (put, remove, putAll, clear), acquire the write lock, and for all read operations (get, size, isEmpty, containsKey, containsValue), acquire the read lock. Ensure that locks are always released after each operation using try-finally blocks. The constructor should accept an existing Map instance to wrap. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 4. Use a fixed thread pool or manually manage at most 3 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Simulated CAS operation.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a Java class called SimulatedCAS that simulates the behavior of a Compare-and-Swap (CAS) operation, which is commonly used in concurrent programming for atomic updates. The class should maintain an internal integer value and provide thread-safe methods to interact with it.
+
+The class should include:
+
+A private integer field value to store the current value.
+A synchronized get() method that returns the current value.
+A synchronized compareAndSwap(int expectedValue, int newValue) method that checks if the current value matches the expectedValue. If it does, it updates the value to newValue; otherwise, it leaves the value unchanged. This method should return the original (old) value before any potential update.
+A synchronized compareAndSet(int expectedValue, int newValue) method that uses compareAndSwap() to determine whether the value was successfully updated. It should return true if the value was changed (i.e., if the old value matched the expected value), and false otherwise.
+Ensure that all methods are thread-safe using the synchronized keyword to prevent race conditions when accessed by multiple threads concurrently. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 2. Use a fixed thread pool or manually manage at most 1 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Nonblocking stack using Treiber's algorithm.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a Java class implementing a thread-safe, non-blocking stack using Treiber's algorithm. The stack should support concurrent push and pop operations without using locks. Use AtomicReference to manage the top of the stack and ensure atomicity during modifications. Include a nested static Node class to represent each element in the stack, with each node containing an item and a reference to the next node. The push method should atomically update the top of the stack to add a new node, and the pop method should remove and return the top element if the stack is not empty, also in an atomic manner using compare-and-set semantics. Provide a main method that demonstrates the functionality of the stack by creating a fixed-size thread pool and submitting multiple tasks that concurrently perform push and pop operations. Each task should push five integers onto the stack and then pop five times, printing out each operation. Ensure proper synchronization so that the main method waits for all threads to finish before printing a completion message. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 4. Use a fixed thread pool or manually manage at most 3 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Thread-safe lazy initialization.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a thread-safe lazy initialization implementation in Java. The class should ensure that a resource is only instantiated when it is first requested, and the initialization must be synchronized to prevent race conditions in a multi-threaded environment. Use a static method to provide access to the shared instance of the resource. Do not use double-checked locking; instead, rely on coarse-grained synchronization to keep the implementation simple and safe. Also, define a placeholder nested Resource class that represents the lazily initialized resource. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 4. Use a fixed thread pool or manually manage at most 3 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Eager initialization.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a Java program that demonstrates eager initialization of a singleton resource. The program should include a class with a static instance of the resource that is created at the time of class loading. Provide a static method to retrieve this instance. The resource class should have a simple method (e.g., doSomething) that outputs a message to the console. In the main method, create and start multiple threads that access the shared resource and invoke the doSomething method. Ensure all threads complete before printing a final message indicating completion. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 4. Use a fixed thread pool or manually manage at most 3 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Lazy initialization holder class idiom.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a Java program that implements a thread-safe singleton pattern using a static nested class to lazily initialize a resource. The main class should provide a public static method to access the singleton instance. Simulate resource initialization by adding a delay in the constructor and assign a unique ID to each instance using its identity hash code. Include a main method that starts multiple threads to concurrently access the singleton resource and print its ID along with the thread name. Ensure that only one instance of the resource is created, even under multi-threaded conditions. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Simple thread-safe counter using the Java monitor pattern.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a thread-safe Counter class in Java using the monitor pattern, where all methods are synchronized to ensure safe access from multiple threads. The class should have a private long field named value initialized to 0. It must provide two synchronized methods: getValue() returns the current value, and increment() increases the value by one and returns it. If the value is already at Long.MAX_VALUE, increment() should throw an IllegalStateException with the message ""counter overflow"". Keep the implementation simple and avoid any external annotations or dependencies. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword. 
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Monitor-based vehicle tracker implementation.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a thread-safe MonitorVehicleTracker class in Java that tracks the locations of vehicles using a synchronized map. The class should take an initial Map<String, MutablePoint> in its constructor and make a deep copy of it to prevent external modification. All public methods must be synchronized to ensure thread safety. Implement a getLocations() method that returns an unmodifiable deep copy of the entire map. Also provide a getLocation(String id) method that returns a new MutablePoint copy of the location for the given ID, or null if not found. Include a setLocation(String id, int x, int y) method that updates the coordinates for the specified vehicle and throws an IllegalArgumentException if the ID is not present. Use a private static deepCopy method to create a new map with copies of all MutablePoint values. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary.
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Using Semaphore to bound a collection.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a generic BoundedHashSet<T> class in Java that uses a Semaphore to limit the number of elements it can hold. The class should internally use a thread-safe Set<T> (such as Collections.synchronizedSet(new HashSet<>())) and a fixed-size Semaphore initialized with the given bound. The add(T o) method must acquire a permit from the semaphore before attempting to add an element; if the addition fails, the permit should be released back. If successful, the permit is not released — it's considered consumed until the element is removed. The remove(Object o) method should remove the element from the set and release a permit if the removal was successful. Both methods should handle synchronization and resource management correctly. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 5. Use a fixed thread pool or manually manage at most 4 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Custom thread factory.,"Please write a concurrent program in Java 8 that implements the following functionality: Create a custom ThreadFactory implementation called MyThreadFactory that generates instances of a specialized thread class named MyAppThread. The factory should take a poolName string as a constructor argument and use it to identify the thread group or pool. The newThread(Runnable runnable) method must return a new instance of MyAppThread, passing in the provided Runnable and the poolName.
+The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 6. Use a fixed thread pool or manually manage at most 5 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Custom thread base class.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a custom MyAppThread class that extends Thread and provides enhanced lifecycle tracking and error handling for application threads. The class should use a static String constant DEFAULT_NAME = ""MyAppThread"" as the default thread name prefix. Each thread should be assigned a unique name by appending an auto-incrementing number from a shared AtomicInteger. Set up an uncaught exception handler to log severe errors using a static Logger, including the thread name and exception details. Override the run() method to optionally log the creation and termination of each thread based on a static volatile boolean flag debugLifecycle. Also, maintain two atomic counters: one for total threads created (created) and one for currently active threads (alive). These counters should be updated in run(), with alive incremented before calling super.run() and decremented in a finally block. Provide public static getter methods for these counters and a setDebug(boolean) method to enable or disable debug logging. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 6. Use a fixed thread pool or manually manage at most 5 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Driver loop that induces deadlock under typical conditions.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a Java class named DemonstrateDeadlock that simulates concurrent money transfers between multiple accounts to demonstrate the possibility of deadlock in multithreaded applications. The program should create a fixed number of threads (e.g., 2) and a fixed number of account objects (e.g., 5). Each thread performs a large number of random transfers (e.g., 10 iterations), selecting two random accounts and transferring a random amount using a method from a class called DynamicOrderDeadlock.transferMoney(Account from, Account to, DollarAmount amount). This method is expected to lock both accounts before performing the transfer and may throw an InsufficientFundsException, which should be caught and ignored. Each account is initialized with a default value and must be thread-safe or synchronized as needed. Use a nested static class TransferThread that extends Thread and implements the transfer logic. Use Random to generate random indices for accounts and amounts. 
+The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Reducing lock duration.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a class named BetterAttributeStore that stores user attributes in a Map<String, String>, where keys follow a format like ""users.name.location"". The class should provide a method userLocationMatches(String name, String regexp) that retrieves the location attribute for a given user and checks whether it matches a regular expression using Pattern.matches(). To ensure thread safety when accessing the map, use a synchronized block on the instance (this) to read the value from the map. If the key is not present or the value is null, the method should return false. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 5. Use a fixed thread pool or manually manage at most 4 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Candidate for lock splitting.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a class named ServerStatusBeforeSplit that maintains two sets of strings: one for users and one for queries. Both sets should be initialized in the constructor using HashSet<String>. All modification methods—such as adding or removing a user or query—should be synchronized on the instance (this) to ensure thread safety when multiple threads access the class concurrently. Provide four synchronized methods: addUser(String u), addQuery(String q), removeUser(String u), and removeQuery(String q)—each performing the corresponding operation on its respective set. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+ServerStatus refactored to use split locks.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a class named ServerStatusAfterSplit that maintains two sets of strings: one for users and one for queries. Both sets should be initialized in the constructor using HashSet<String>. To improve concurrency performance, each method that modifies a set should synchronize on the corresponding collection object (users or queries) rather than the entire instance. This allows multiple threads to modify different sets concurrently without blocking each other. Implement four methods: addUser(String u), addQuery(String q), removeUser(String u), and removeQuery(String q), each of which performs the appropriate operation on its respective set while holding the lock on that specific collection. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary.
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Barrier-based timer.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a thread-safe BarrierTimer class that implements the Runnable interface and is used to measure the time between two events in a concurrent environment. The class should have three instance variables: a boolean started, and two long values startTime and endTime. When the run() method is called, it records the current time using System.nanoTime(). If this is the first call (i.e., started is false), it sets started to true and stores the time as startTime. On subsequent calls, it updates endTime with the current time. Provide a clear() method that resets the timer by setting started back to false. Also provide a getTime() method that returns the difference between endTime and startTime, representing the elapsed time in nanoseconds. All methods must be synchronized to ensure thread safety. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
+Nonblocking counter using CAS.,"Please write a concurrent program in Java 8 that implements the following functionality: Write a thread-safe CasCounter class that uses a custom SimulatedCAS implementation to provide atomic increment functionality using the Compare-and-Swap (CAS) pattern. The CasCounter should have an internal SimulatedCAS field and expose two methods: getValue() which returns the current counter value, and increment() which atomically increments the value using a loop with CAS logic. The SimulatedCAS class must implement a compareAndSwap(int expected, int newValue) method that performs the swap only if the current value matches the expected one, returning the original value in both cases. The requirements are as follows:
+
+All classes and methods must be defined within a single .java file;
+The program must include a public static void main(String[] args) method as the entry point;
+No external libraries or dependencies should be used;
+The code should be clear, well-structured, and follow Java 8 syntax standards;
+If multiple classes are needed, they should all be placed in the same file, with non-public classes defined using the class keyword.
+The implementation must use multithreading to perform tasks concurrently. You may use Thread, Runnable, or ExecutorService from the standard Java library to achieve this. Ensure that thread safety is considered where necessary. 
+Write Java 8 code only. Output a single complete code block using ```java```. Do not include any explanations, comments, or extra text. Only output the code, nothing else. 
+The total number of threads used in the program, including the main thread, must not exceed 3. Use a fixed thread pool or manually manage at most 2 additional threads beyond the main thread. Avoid unbounded thread creation or cached thread pools. 
+Do not add any annotations."
