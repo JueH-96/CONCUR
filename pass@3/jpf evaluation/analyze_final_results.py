@@ -16,7 +16,7 @@ def get_java_code(examples_dir, llm_name, problem_name):
                 with open(java_path, "r", encoding="utf-8", errors="ignore") as f:
                     return f.read()
             except Exception as e:
-                print(f"⚠️ 无法读取 Java 文件: {java_path}, 错误: {e}")
+                print(f" Cannot read Java File: {java_path}, Error: {e}")
     return ""
 
 def analyze_examples_and_jpf_txt(writer, examples_dir):
@@ -46,24 +46,19 @@ def analyze_examples_and_jpf_txt(writer, examples_dir):
                     with open(txt_path, "r", encoding="utf-8", errors="ignore") as f:
                         content = f.read()
 
-                    # 有txt文件但没有jpf文件 → Compilation failed
                     if not has_jpf:
                         result = "Compilation failed"
                         thread_count = ""
                     else:
-                        # 标记 PreciseRaceDetector
                         has_precise_race = "PreciseRaceDetector" in content
 
-                        # 优先判定 NPE：有 NullPointerException 且没有 search finished
                         if "NullPointerException" in content and "====================================================== search finished" not in content:
                             result = "NPE"
                             thread_count = ""
-                        # 其他情况且没有 search finished → Termination Error
                         elif "====================================================== search finished" not in content:
                             result = "Termination Error"
                             thread_count = 0
                         else:
-                            # 提取线程数量
                             match = re.search(r"Unique logical threads created during execution:\s*(\d+)", content)
                             if match:
                                 thread_count = int(match.group(1))
@@ -82,10 +77,9 @@ def analyze_examples_and_jpf_txt(writer, examples_dir):
                     writer.writerow([llm_name, problem_name, result, thread_count, java_code])
 
                 except Exception as e:
-                    print(f"❌ 处理文件 {txt_path} 出错: {e}")
+                    print(f"Assessing {txt_path} wrong: {e}")
 
             else:
-                # 没有 txt 文件 → No result
                 writer.writerow([llm_name, problem_name, "No result", "", java_code])
 
 def main():
