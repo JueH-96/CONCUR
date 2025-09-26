@@ -32,12 +32,10 @@ public class ThreadLimitListener extends ListenerAdapter {
             violationMessage = "ERROR: Too many threads! Current: " + liveThreads + ", Max allowed: " + maxThreads;
             System.out.println(violationMessage);
 
-            // 设置状态，终止当前搜索路径
             violationReported = true;
 
-            // 中止 JPF 检索
-            vm.getSearch().terminate();  // 等价于“提前结束”
-            vm.breakTransition(violationMessage); // 可选：中止当前状态的路径探索
+            vm.getSearch().terminate();
+            vm.breakTransition(violationMessage);
         }
     }
 

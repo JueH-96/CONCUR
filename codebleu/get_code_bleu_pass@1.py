@@ -67,7 +67,6 @@ with open('finalresult Pass@1 22 llms.csv', 'r', encoding='utf-8') as final_file
 
         updated_rows.append(row)
 
-# Step 4: 写回 finalresult.csv
 with open('finalresult Pass@1 22 llms.csv', 'w', encoding='utf-8', newline='') as out_file:
     writer = csv.writer(out_file)
     writer.writerows(updated_rows)

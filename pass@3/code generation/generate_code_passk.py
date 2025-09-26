@@ -7,8 +7,7 @@ from pathlib import Path
 import tempfile
 import re
 
-# ----------------------------
-# Helper function to write result to CSV
+
 def write_result_to_csv(result_csv, custom_folder_name, model_name, status):
     file_exists = Path(result_csv).exists()
     with open(result_csv, 'a', newline='') as f:
@@ -30,8 +29,7 @@ def write_result_to_csv(result_csv, custom_folder_name, model_name, status):
         writer.writerow([new_seq, custom_folder_name, model_name, status])
         print(f"Result appended to: {result_csv}")
 
-# ----------------------------
-# Main function
+
 def main():
     if len(sys.argv) < 4:
         print("Usage: python generate_java.py <custom_folder_name> <model_name> \"<prompt>\"")
@@ -49,14 +47,14 @@ def main():
         output_dir.mkdir(parents=True, exist_ok=True)
         print(f"Ensured directory exists: {output_dir}")
 
-        # Check if Java file already exists
+
         if any(output_dir.glob("*.java")):
             print(f"Java file already exists in {output_dir}. Skipping generation.")
             status = "skipped_existing_file"
             write_result_to_csv(result_csv, custom_folder_name, model_name, status)
             continue
 
-        # Write prompt to temporary file
+
         with tempfile.NamedTemporaryFile(mode="w+", delete=False) as tmp:
             tmp.write(prompt)
             tmp_prompt_path = tmp.name
@@ -66,7 +64,7 @@ def main():
         for attempt in range(1, max_retries + 1):
             print(f"Attempt {attempt} of {max_retries} to get Java code for V{v}...")
 
-            # Run ollama (replace with actual command if needed)
+
             try:
                 response = subprocess.check_output(
                     ["ollama", "run", model_name],

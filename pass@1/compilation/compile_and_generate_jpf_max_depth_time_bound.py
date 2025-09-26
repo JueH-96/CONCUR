@@ -111,7 +111,6 @@ for java_file in OUTPUT_DIR.rglob("*.java"):
 
         print(f"Full compile error written to: {result_file}")
 
-# ================== Summary Report ==================
 print("\nSummary Report:")
 print(f"   Compiled successfully: {success_count}")
 print(f"   Compilation failed:   {fail_count}")
