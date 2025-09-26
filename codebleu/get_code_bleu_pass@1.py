@@ -2,10 +2,8 @@ import csv
 import sys
 from codebleu import calc_codebleu
 
-# 设置字段大小限制为最大值
 csv.field_size_limit(sys.maxsize)
 
-# Step 1: 读取 ground-truth.csv，建立 {problem_name: (reference_code, num_threads)}
 ground_truth = {}
 with open('ground-truth.csv', 'r', encoding='utf-8') as gt_file:
     reader = csv.reader(gt_file)
@@ -16,15 +14,13 @@ with open('ground-truth.csv', 'r', encoding='utf-8') as gt_file:
             num_threads = row[2]
             ground_truth[problem_name] = (reference_code, num_threads)
         elif len(row) >= 2:
-            ground_truth[row[0]] = (row[1], "N/A")  # 线程数缺失时填 "N/A"
+            ground_truth[row[0]] = (row[1], "N/A")
 
-# Step 2: 读取 finalresult.csv，准备处理
 updated_rows = []
 with open('finalresult Pass@1 22 llms.csv', 'r', encoding='utf-8') as final_file:
     reader = csv.reader(final_file)
     header = next(reader)
 
-    # 添加新列标题（如果还未添加）
     if "ground-truth threads" not in header:
         header.append("ground-truth threads")
     if "Syntax Match" not in header:
@@ -36,7 +32,6 @@ with open('finalresult Pass@1 22 llms.csv', 'r', encoding='utf-8') as final_file
 
     updated_rows.append(header)
 
-    # Step 3: 逐行处理
     for row in reader:
         if len(row) < 5:
             updated_rows.append(row)
@@ -53,7 +48,6 @@ with open('finalresult Pass@1 22 llms.csv', 'r', encoding='utf-8') as final_file
                 [reference_code], [prediction],
                 lang="java", weights=(0, 0, 0.5, 0.5), tokenizer=None
             )
-            # 提取三个分数
             syntax_score = result.get('syntax_match_score', 'N/A')
             dataflow_score = result.get('dataflow_match_score', 'N/A')
             try:

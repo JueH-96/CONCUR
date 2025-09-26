@@ -48,33 +48,6 @@ fix_braces = 0
 # Traverse all Java files under examples
 for java_file in OUTPUT_DIR.rglob("*.java"):
 
-    try:
-        lines = java_file.read_text(encoding="utf-8").splitlines()
-        fixed = False
-
-        # Remove trailing ``` if present
-        if lines and lines[-1].strip() == "```":
-            lines = lines[:-1]
-            fixed = True
-            fix_backticks += 1
-            print(f"Removed trailing ``` from {java_file}")
-
-        # Check if braces match
-        open_braces = sum(line.count("{") for line in lines)
-        close_braces = sum(line.count("}") for line in lines)
-        if close_braces < open_braces:
-            lines.append("}")
-            fixed = True
-            fix_braces += 1
-            print(f"Added missing closing brace to {java_file}")
-
-        if fixed:
-            fix_total += 1
-            java_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-    except Exception as e:
-        print(f"Could not process {java_file}: {e}")
-
     base_name = java_file.stem
     dir_of_java = java_file.parent
     jpf_file = java_file.with_suffix(".jpf")
