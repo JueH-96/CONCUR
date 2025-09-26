@@ -3,10 +3,8 @@ import sys
 import re
 from codebleu import calc_codebleu
 
-# 设置字段大小限制为最大值
 csv.field_size_limit(sys.maxsize)
 
-# Step 1: 读取 ground-truth.csv，建立 {problem_name: (reference_code, num_threads)}
 ground_truth = {}
 with open('ground-truth.csv', 'r', encoding='utf-8') as gt_file:
     reader = csv.reader(gt_file)
@@ -17,15 +15,13 @@ with open('ground-truth.csv', 'r', encoding='utf-8') as gt_file:
             num_threads = row[2]
             ground_truth[problem_name] = (reference_code, num_threads)
         elif len(row) >= 2:
-            ground_truth[row[0]] = (row[1], "N/A")  # 线程数缺失时填 "N/A"
+            ground_truth[row[0]] = (row[1], "N/A")
 
-# Step 2: 读取 finalresult.csv，准备处理
 updated_rows = []
 with open('finalresult Pass@3 22 llms.csv', 'r', encoding='utf-8') as final_file:
     reader = csv.reader(final_file)
     header = next(reader)
 
-    # 添加新列标题（如果还未添加）
     if "ground-truth threads" not in header:
         header.append("ground-truth threads")
     if "Syntax Match" not in header:
@@ -37,7 +33,6 @@ with open('finalresult Pass@3 22 llms.csv', 'r', encoding='utf-8') as final_file
 
     updated_rows.append(header)
 
-    # Step 3: 逐行处理
     for row in reader:
         if len(row) < 5:
             updated_rows.append(row)
@@ -45,7 +40,6 @@ with open('finalresult Pass@3 22 llms.csv', 'r', encoding='utf-8') as final_file
 
         problem_name_raw = row[1]
 
-        # 去掉版本号后缀 VX，例如 problem1V2 -> problem1
         problem_name = re.sub(r'V\d+$', '', problem_name_raw)
 
         prediction = row[4]
@@ -75,7 +69,6 @@ with open('finalresult Pass@3 22 llms.csv', 'r', encoding='utf-8') as final_file
 
         updated_rows.append(row)
 
-# Step 4: 写回 finalresult.csv
 with open('finalresult Pass@3 22 llms.csv', 'w', encoding='utf-8', newline='') as out_file:
     writer = csv.writer(out_file)
     writer.writerows(updated_rows)
