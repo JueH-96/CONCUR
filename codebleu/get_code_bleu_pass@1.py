@@ -71,4 +71,4 @@ with open('finalresult Pass@1 22 llms.csv', 'w', encoding='utf-8', newline='') a
     writer = csv.writer(out_file)
     writer.writerows(updated_rows)
 
-print("处理完成。")
+print("Done。")
