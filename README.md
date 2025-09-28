@@ -23,7 +23,6 @@
 
 - Python 3.12
 - Java 8
-- Linux in Ubuntu 20.04+
 - [Java Pathfinder](https://github.com/javapathfinder/jpf-core.git)
 - CodeBLEU
 - Large language model platforms (e.g., Ollama) or access LLM through API
