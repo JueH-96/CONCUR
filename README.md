@@ -33,7 +33,6 @@
 
 - `codebleu` - CodeBLEU score calculation and conclusion script
   - `get_codebleu_pass@k.py` - Calculate codebleu
-  - `get_conclusion_pass@k.py` - Get avg codebleu and conclusion
 - `models` - evaluated models list
 - `pass@k`
   - `code generation` - batch generate code by LLMs
