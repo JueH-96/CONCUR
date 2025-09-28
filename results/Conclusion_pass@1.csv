@@ -1,4 +1,4 @@
-Large Language Model,Compilation Errors,JPF Errors,Passes,Passing Rate,CodeBLEU
+Large Language Model,Compilation Fail,JPF Fail,Passes,Passing Rate,CodeBLEU
 claude-opus-4-1-20250805,0,16,27,27/43 (62.79%),0.588989
 codellama:34b,35,8,0,0/43 (0.00%),0.445282
 codeqwen:7b,26,11,6,6/43 (13.95%),0.466210
