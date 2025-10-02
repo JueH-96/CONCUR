@@ -14,7 +14,7 @@ public class ThreadLimitListener extends ListenerAdapter {
     private String violationMessage = "";
 
     public ThreadLimitListener(Config config) {
-        this.maxThreads = config.getInt("threadlimitlistener.maxThreads", 5); // 默认最大5个线程
+        this.maxThreads = config.getInt("threadlimitlistener.maxThreads", 5);
     }
 
     @Override
