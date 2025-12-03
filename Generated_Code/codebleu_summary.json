@@ -1,0 +1,186 @@
+{
+    "claude-opus-4-1-20250805": {
+        "total_codes": 345,
+        "avg_score": 58.05,
+        "min_score": 43.05,
+        "max_score": 76.42,
+        "scores_above_70": 8,
+        "scores_above_50": 326
+    },
+    "codellama:34b": {
+        "total_codes": 345,
+        "avg_score": 39.75,
+        "min_score": 16.44,
+        "max_score": 62.86,
+        "scores_above_70": 0,
+        "scores_above_50": 65
+    },
+    "codeqwen:7b": {
+        "total_codes": 345,
+        "avg_score": 46.08,
+        "min_score": 16.86,
+        "max_score": 66.65,
+        "scores_above_70": 0,
+        "scores_above_50": 109
+    },
+    "codestral:22b": {
+        "total_codes": 345,
+        "avg_score": 46.78,
+        "min_score": 26.4,
+        "max_score": 65.24,
+        "scores_above_70": 0,
+        "scores_above_50": 126
+    },
+    "deepseek-r1:32b": {
+        "total_codes": 344,
+        "avg_score": 53.82,
+        "min_score": 22.71,
+        "max_score": 75.87,
+        "scores_above_70": 4,
+        "scores_above_50": 246
+    },
+    "dolphin3:8b": {
+        "total_codes": 345,
+        "avg_score": 49.08,
+        "min_score": 26.83,
+        "max_score": 66.65,
+        "scores_above_70": 0,
+        "scores_above_50": 161
+    },
+    "gemini-3-pro": {
+        "total_codes": 345,
+        "avg_score": 57.51,
+        "min_score": 37.2,
+        "max_score": 74.64,
+        "scores_above_70": 8,
+        "scores_above_50": 319
+    },
+    "gemma2:27b": {
+        "total_codes": 345,
+        "avg_score": 48.56,
+        "min_score": 28.61,
+        "max_score": 65.59,
+        "scores_above_70": 0,
+        "scores_above_50": 167
+    },
+    "gpt-4o": {
+        "total_codes": 345,
+        "avg_score": 54.19,
+        "min_score": 33.84,
+        "max_score": 75.61,
+        "scores_above_70": 3,
+        "scores_above_50": 263
+    },
+    "gpt-5": {
+        "total_codes": 345,
+        "avg_score": 57.62,
+        "min_score": 44.31,
+        "max_score": 74.35,
+        "scores_above_70": 4,
+        "scores_above_50": 314
+    },
+    "llama3.3:70b": {
+        "total_codes": 345,
+        "avg_score": 51.45,
+        "min_score": 31.31,
+        "max_score": 72.43,
+        "scores_above_70": 2,
+        "scores_above_50": 210
+    },
+    "llava:34b": {
+        "total_codes": 345,
+        "avg_score": 45.25,
+        "min_score": 13.18,
+        "max_score": 69.4,
+        "scores_above_70": 0,
+        "scores_above_50": 113
+    },
+    "magicoder:7b": {
+        "total_codes": 345,
+        "avg_score": 41.26,
+        "min_score": 15.51,
+        "max_score": 65.04,
+        "scores_above_70": 0,
+        "scores_above_50": 53
+    },
+    "mistral:7b": {
+        "total_codes": 345,
+        "avg_score": 50.29,
+        "min_score": 28.13,
+        "max_score": 72.37,
+        "scores_above_70": 1,
+        "scores_above_50": 195
+    },
+    "mixtral:8x7b": {
+        "total_codes": 345,
+        "avg_score": 47.62,
+        "min_score": 2.4,
+        "max_score": 68.32,
+        "scores_above_70": 0,
+        "scores_above_50": 189
+    },
+    "opencoder:8b": {
+        "total_codes": 345,
+        "avg_score": 47.64,
+        "min_score": 23.48,
+        "max_score": 75.77,
+        "scores_above_70": 2,
+        "scores_above_50": 122
+    },
+    "phi4:14b": {
+        "total_codes": 345,
+        "avg_score": 53.19,
+        "min_score": 35.57,
+        "max_score": 71.11,
+        "scores_above_70": 1,
+        "scores_above_50": 241
+    },
+    "phind-codellama:34b": {
+        "total_codes": 345,
+        "avg_score": 44.68,
+        "min_score": 26.45,
+        "max_score": 64.38,
+        "scores_above_70": 0,
+        "scores_above_50": 77
+    },
+    "qwen3:32b": {
+        "total_codes": 338,
+        "avg_score": 52.05,
+        "min_score": 1.6,
+        "max_score": 82.14,
+        "scores_above_70": 10,
+        "scores_above_50": 237
+    },
+    "starcoder2:15b": {
+        "total_codes": 344,
+        "avg_score": 35.76,
+        "min_score": 3.1,
+        "max_score": 72.02,
+        "scores_above_70": 1,
+        "scores_above_50": 40
+    },
+    "vicuna:33b": {
+        "total_codes": 345,
+        "avg_score": 45.23,
+        "min_score": 19.06,
+        "max_score": 67.43,
+        "scores_above_70": 0,
+        "scores_above_50": 108
+    },
+    "wizardcoder:33b": {
+        "total_codes": 345,
+        "avg_score": 46.03,
+        "min_score": 28.9,
+        "max_score": 66.48,
+        "scores_above_70": 0,
+        "scores_above_50": 85
+    },
+    "zephyr:7b": {
+        "total_codes": 345,
+        "avg_score": 53.71,
+        "min_score": 31.19,
+        "max_score": 78.2,
+        "scores_above_70": 2,
+        "scores_above_50": 252
+    }
+}
