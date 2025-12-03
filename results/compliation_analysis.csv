@@ -1,0 +1,1190 @@
+LLM,Prompt Title,Original Error Type,Classification,Details
+claude-opus-4-1-20250805,Using a factory method to prevent the this reference from escaping during construction. M0,Compilation Errors,Syntax error,"./temp_compile/SafeListener.java:60: error: local variables referenced from an inner class must be final or effectively final
+                    private final int id = i;
+                                           ^
+1 error"
+codellama:34b,Counting sheep. M1,Compilation Errors,Syntax error,"./temp_compile/SleepyTraveler.java:8: error: unreported exception InterruptedException; must be caught or declared to be thrown
+        executor.submit(() -> traveler.tryToSleep());
+                                                 ^
+1 error"
+codellama:34b,Counting sheep. M2,Compilation Errors,Syntax error,"./temp_compile/Wanderer.java:9: error: non-static method tryToSleep() cannot be referenced from a static context
+                tryToSleep();
+                ^
+./temp_compile/Wanderer.java:15: error: non-static method countSomeSheep() cannot be referenced from a static context
+                count"
+codellama:34b,Counting sheep. M3,Compilation Errors,Missing package,"./temp_compile/Scout.java:16: error: cannot find symbol
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        ^
+  symbol:   class ExecutorService
+  location: class Scout
+./temp_compile/Scout.java:16: error: cannot find symbol
+        ExecutorService executor = Executors.newFixe"
+codellama:34b,Immutable class built out of mutable underlying objects. M1,Compilation Errors,Missing package,"./temp_compile/CosmicCats.java:2: error: cannot find symbol
+    private final Set<Integer> catIdentifiers;
+                  ^
+  symbol:   class Set
+  location: class CosmicCats
+./temp_compile/CosmicCats.java:4: error: cannot find symbol
+    public CosmicCats(Set<Integer> catIds) {
+                 "
+codellama:34b,Immutable class built out of mutable underlying objects. M2,Compilation Errors,Missing package,"./temp_compile/MysticMonkeys.java:2: error: cannot find symbol
+    private Set<String> monkeyLabels;
+            ^
+  symbol:   class Set
+  location: class MysticMonkeys
+./temp_compile/MysticMonkeys.java:5: error: cannot find symbol
+        this.monkeyLabels = new HashSet<>();
+                       "
+codellama:34b,Returning a static copy of the location set instead of a 'live' one. M1,Compilation Errors,Missing package,"./temp_compile/DelegatingDeviceTracker.java:17: error: cannot find symbol
+  public Map<String, String> getAllPositions() {
+         ^
+  symbol:   class Map
+  location: class DelegatingDeviceTracker
+./temp_compile/DelegatingDeviceTracker.java:18: error: cannot find symbol
+    return Collections.unmod"
+codellama:34b,Returning a static copy of the location set instead of a 'live' one. M2,Compilation Errors,Third-party library usage,"./temp_compile/DelegatingParcelTracker.java:4: error: cannot find symbol
+    private final ConcurrentHashMap<String, Position> positions = new ConcurrentHashMap<>();
+                                            ^
+  symbol:   class Position
+  location: class DelegatingParcelTracker
+./temp_compile/Dele"
+codellama:34b,Returning a static copy of the location set instead of a 'live' one. M3,Compilation Errors,Third-party library usage,"./temp_compile/DelegatingRobotTracker.java:5: error: cannot find symbol
+    private ConcurrentHashMap<String, Coordinates> robots = new ConcurrentHashMap<>();
+                                      ^
+  symbol:   class Coordinates
+  location: class DelegatingRobotTracker
+./temp_compile/DelegatingRobot"
+codellama:34b,Candidate for lock elision. M1,Compilation Errors,Missing package,"./temp_compile/QuantumQuokkas.java:13: error: class Main is public, should be declared in a file named Main.java
+public class Main {
+       ^
+./temp_compile/QuantumQuokkas.java:8: error: cannot find symbol
+    public List<String> getQuokkaLabels() {
+           ^
+  symbol:   class List
+  location: cl"
+codellama:34b,Candidate for lock elision. M2,Compilation Errors,Missing package,"./temp_compile/SolarSquirrels.java:13: error: class Main is public, should be declared in a file named Main.java
+public class Main {
+       ^
+./temp_compile/SolarSquirrels.java:2: error: cannot find symbol
+    private final List<String> squirrelIdentifiers = Arrays.asList(""Nutty"", ""Whisk"", ""Fidget"")"
+codellama:34b,Candidate for lock elision. M3,Compilation Errors,Syntax error,"./temp_compile/MysticMantas.java:5: error: cannot find symbol
+        return Arrays.stream(tags).anyMatch(t -> t.equalsIgnoreCase(tag));
+               ^
+  symbol:   variable Arrays
+  location: class MysticMantas
+./temp_compile/MysticMantas.java:9: error: cannot find symbol
+        return Arrays.str"
+codellama:34b,Avoiding lock-ordering deadlock using try Lock. M1,Compilation Errors,Third-party library usage,"./temp_compile/DeadlockAvoidance.java:8: error: cannot find symbol
+    public static void main(String[] args) throws NotEnoughItemsException, InterruptedException {
+                                                  ^
+  symbol:   class NotEnoughItemsException
+  location: class DeadlockAvoidance
+./tem"
+codellama:34b,Avoiding lock-ordering deadlock using try Lock. M2,Compilation Errors,Missing package,"./temp_compile/DeadlockAvoidanceMechanism.java:41: error: cannot find symbol
+    ReentrantLock lock1;
+    ^
+  symbol:   class ReentrantLock
+  location: class Swapper
+./temp_compile/DeadlockAvoidanceMechanism.java:42: error: cannot find symbol
+    ReentrantLock lock2;
+    ^
+  symbol:   class Reentran"
+codestral:22b,Waiting for results to be calculated in parallel. M0,Compilation Errors,Syntax error,"./temp_compile/SequentialProcessor.java:38: error: ';' expected
+        return root.process(), result;
+                             ^
+./temp_compile/SequentialProcessor.java:38: error: not a statement
+        return root.process(), result;
+                               ^
+./temp_compile/SequentialPr"
+codestral:22b,Wrapping a Map with a read-write lock. M0,Compilation Errors,Missing package,"./temp_compile/Main.java:38: error: cannot find symbol
+        ExecutorService executor = java.util.concurrent.Executors.newFixedThreadPool(3);
+        ^
+  symbol:   class ExecutorService
+  location: class Main
+1 error"
+deepseek-r1:32b,Returning a static copy of the location set instead of a 'live' one. M2,Compilation Errors,Syntax error,"./temp_compile/DelegatingParcelTracker.java:9: error: cannot find symbol
+    private final ConcurrentMap<String, String> packages;
+                  ^
+  symbol:   class ConcurrentMap
+  location: class DelegatingParcelTracker
+1 error"
+deepseek-r1:32b,Returning a static copy of the location set instead of a 'live' one. M3,Compilation Errors,Syntax error,"./temp_compile/DelegatingRobotTracker.java:48: error: incompatible types: possible lossy conversion from double to int
+                    tracker.modifyCoordinates(""R1"", Math.random() * 10, Math.random() * 10);
+                                                                  ^
+./temp_compile/Deleg"
+deepseek-r1:32b,Candidate for lock elision. M2,Compilation Errors,Syntax error,"./temp_compile/SolarSquirrels.java:27: error: ')' expected
+            System.out.println(solarS squirrels.isSquirrel(""Fidget""));
+                                     ^
+./temp_compile/SolarSquirrels.java:27: error: illegal start of expression
+            System.out.println(solarS squirrels.isSquirre"
+deepseek-r1:32b,Avoiding lock-ordering deadlock using try Lock. M2,Compilation Errors,Missing package,"./temp_compile/ContainerSwapper.java:10: error: cannot find symbol
+        ReentrantLock lock = new ReentrantLock();
+        ^
+  symbol:   class ReentrantLock
+  location: class Container
+./temp_compile/ContainerSwapper.java:10: error: cannot find symbol
+        ReentrantLock lock = new ReentrantLock"
+deepseek-r1:32b,Using confinement to ensure thread safety. M1,Compilation Errors,Missing package,"./temp_compile/PersonSet.java:2: error: cannot find symbol
+    private final Set<Person> persons = new HashSet<>();
+                  ^
+  symbol:   class Set
+  location: class PersonSet
+./temp_compile/PersonSet.java:2: error: cannot find symbol
+    private final Set<Person> persons = new HashSet<>()"
+deepseek-r1:32b,Using confinement to ensure thread safety. M2,Compilation Errors,Syntax error,"./temp_compile/PersonSet.java:26: error: ';' expected
+            Person alice = new Object() implements Person {
+                                       ^
+./temp_compile/PersonSet.java:26: error: not a statement
+            Person alice = new Object() implements Person {
+                            "
+deepseek-r1:32b,Vehicle tracker that safely publishes underlying state. M2,Compilation Errors,Syntax error,"./temp_compile/PublishingVehicleTracker.java:12: error: cannot find symbol
+        try (var scanner = new java.util.Scanner(System.in)) {
+             ^
+  symbol:   class var
+  location: class PublishingVehicleTracker
+1 error"
+deepseek-r1:32b,Thread confinement of local primitive and reference variables. M1,Compilation Errors,Syntax error,"./temp_compile/HarmonyFinder.java:98: error: non-static method addHarmony(Harmony) cannot be referenced from a static context
+                            Grimoire.addHarmony(new Harmony(p, n));
+                                    ^
+1 error"
+deepseek-r1:32b,Thread confinement of local primitive and reference variables. M3,Compilation Errors,Syntax error,Cannot extract class name
+deepseek-r1:32b,Delegating thread safety to a ConcurrentHashMap. M1,Compilation Errors,Syntax error,"./temp_compile/MysticBeastTracker.java:24: error: bad operand type Glyph for unary operator '!'
+        if (!perches.computeIfPresent(sigil, (s, glyph) -> new Glyph(spark, glimmer))) {
+            ^
+1 error"
+deepseek-r1:32b,Using FutureTask to preload data that is needed later. M2,Compilation Errors,Syntax error,"./temp_compile/RelicCastException.java:24: error: class, interface, or enum expected
+import java.util.concurrent.FutureTask;
+^
+1 error"
+deepseek-r1:32b,Using FutureTask to preload data that is needed later. M3,Compilation Errors,Syntax error,"./temp_compile/StarForge.java:16: error: cannot find symbol
+        futureTask = new FutureTask<>(new Callable<>() {
+                                          ^
+  symbol:   class Callable
+  location: class StarForge
+./temp_compile/StarForge.java:47: error: cannot find symbol
+            throw new Ca"
+dolphin3:8b,Counting sheep. M3,Compilation Errors,Syntax error,"./temp_compile/Main.java:31: error: asleep has private access in Scout
+            while (!scout.asleep) {
+                         ^
+1 error"
+dolphin3:8b,Returning a static copy of the location set instead of a 'live' one. M1,Compilation Errors,Syntax error,"./temp_compile/Main.java:53: error: cannot find symbol
+        tracker.initialize(Map.of(1, new Position(0, 0), 2, new Position(10, 0)));
+                              ^
+  symbol:   method of(int,Position,int,Position)
+  location: interface Map
+1 error"
+dolphin3:8b,Returning a static copy of the location set instead of a 'live' one. M2,Compilation Errors,Syntax error,"./temp_compile/Main.java:37: error: incompatible types: inference variable R has incompatible bounds
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+                        ^
+    upper bounds: Set<Entry<Integer,Integer>>,Object
+    equality constraints: Map<K,U>
+ "
+dolphin3:8b,Returning a static copy of the location set instead of a 'live' one. M3,Compilation Errors,Third-party library usage,"./temp_compile/DelegatingRobotTracker.java:10: error: cannot find symbol
+            Coordinates oldCoordinates = robotCoordinates.get(robotId);
+            ^
+  symbol:   class Coordinates
+  location: class DelegatingRobotTracker
+1 error"
+dolphin3:8b,Candidate for lock elision. M2,Compilation Errors,Missing package,"./temp_compile/Main.java:22: error: cannot find symbol
+    private static final ExecutorService executorService = Executors.newFixedThreadPool(2);
+                         ^
+  symbol:   class ExecutorService
+  location: class Main
+./temp_compile/Main.java:8: error: cannot find symbol
+        this.sq"
+dolphin3:8b,Avoiding lock-ordering deadlock using try Lock. M1,Compilation Errors,Missing package,"./temp_compile/Locker.java:56: error: class DeadlockAvoidance is public, should be declared in a file named DeadlockAvoidance.java
+public class DeadlockAvoidance {
+       ^
+./temp_compile/Locker.java:19: error: cannot find symbol
+    private Random random = new Random();
+            ^
+  symbol:   cl"
+dolphin3:8b,Avoiding lock-ordering deadlock using try Lock. M2,Compilation Errors,Syntax error,"./temp_compile/DeadlockAvoidance.java:42: error: incompatible types: int cannot be converted to TimeUnit
+            if (lock.tryLock(1000, new Random().nextInt(500)) == true) {
+                                                       ^
+Note: Some messages have been simplified; recompile with -Xdiags:"
+dolphin3:8b,Avoiding lock-ordering deadlock using try Lock. M3,Compilation Errors,Syntax error,"./temp_compile/WidgetHandler.java:57: error: interface expected here
+class Bin implements WidgetCount {
+                     ^
+./temp_compile/WidgetHandler.java:17: error: incompatible types: int cannot be converted to WidgetCount
+                WidgetCount currentSourceWidgetCount = sourceBin.getW"
+dolphin3:8b,Candidate for lock splitting. M1,Compilation Errors,Syntax error,"./temp_compile/Main.java:67: error: devices has private access in ServerStatusBeforeSplit
+        System.out.println(""Devices: "" + server.devices);
+                                               ^
+./temp_compile/Main.java:68: error: tasks has private access in ServerStatusBeforeSplit
+        System."
+dolphin3:8b,Candidate for lock splitting. M2,Compilation Errors,Syntax error,"./temp_compile/Main.java:40: error: bad operand types for binary operator '-'
+                    server.removeUser(""notebook "" + i - 2);
+                                                      ^
+  first type:  String
+  second type: int
+./temp_compile/Main.java:43: error: bad operand types for binary "
+dolphin3:8b,Using confinement to ensure thread safety. M1,Compilation Errors,Syntax error,"./temp_compile/Main.java:38: error: Person is abstract; cannot be instantiated
+            personSet.insertPerson(new Person());
+                                   ^
+./temp_compile/Main.java:48: error: Person is abstract; cannot be instantiated
+            personSet.containsPerson(new Person());
+   "
+dolphin3:8b,Using confinement to ensure thread safety. M3,Compilation Errors,Missing package,"./temp_compile/PersonSet.java:45: error: cannot find symbol
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        ^
+  symbol:   class ExecutorService
+  location: class PersonSet
+./temp_compile/PersonSet.java:45: error: cannot find symbol
+        ExecutorService executor = E"
+dolphin3:8b,Vehicle tracker that safely publishes underlying state. M1,Compilation Errors,Syntax error,"./temp_compile/PublishingVehicleTracker.java:11: error: cannot find symbol
+                .collect(Collectors.toMap(Map.Entry::getKey, entry -> new SafePoint(entry.getValue())));
+                         ^
+  symbol:   variable Collectors
+  location: class PublishingVehicleTracker
+./temp_compile/Pub"
+dolphin3:8b,Publishing an object. M2,Compilation Errors,Syntax error,"./temp_compile/Galaxies.java:36: error: exception InterruptedException is never thrown in body of corresponding try statement
+        } catch (InterruptedException e) {
+          ^
+1 error"
+dolphin3:8b,Thread confinement of local primitive and reference variables. M1,Compilation Errors,Missing package,"./temp_compile/Rune.java:24: error: invalid method reference
+        Collections.sort(runes, Comparator.comparingInt(Rune::getConstellationOrder).thenComparingInt(Rune::getResonanceOrder));
+                                                        ^
+  cannot find symbol
+    symbol:   method getConstel"
+dolphin3:8b,Thread confinement of local primitive and reference variables. M2,Compilation Errors,Missing package,"./temp_compile/Main.java:88: error: cannot find symbol
+    private final ExecutorService executor;
+                  ^
+  symbol:   class ExecutorService
+  location: class RuneHarmonizer
+./temp_compile/Main.java:44: error: non-static method reversed() cannot be referenced from a static context
+      "
+dolphin3:8b,Thread confinement of local primitive and reference variables. M3,Compilation Errors,Missing package,"./temp_compile/Main.java:96: error: cannot find symbol
+    private ExecutorService executor;
+            ^
+  symbol:   class ExecutorService
+  location: class HarmonyHandler
+./temp_compile/Main.java:39: error: cannot find symbol
+            harmony.execute();
+                   ^
+  symbol:   method "
+dolphin3:8b,Delegating thread safety to a ConcurrentHashMap. M1,Compilation Errors,Syntax error,"./temp_compile/MysticBeastTracker.java:59: error: cannot find symbol
+        Map<String, Glyph> initialPerches = Map.of(
+                                               ^
+  symbol:   method of(String,Glyph,String,Glyph)
+  location: interface Map
+1 error"
+dolphin3:8b,Delegating thread safety to a ConcurrentHashMap. M2,Compilation Errors,Missing package,"./temp_compile/CelestialCaravanTracker.java:10: error: cannot find symbol
+    public CelestialCaravanTracker(Map<String, Starlight> initialMap) {
+                                   ^
+  symbol:   class Map
+  location: class CelestialCaravanTracker
+./temp_compile/CelestialCaravanTracker.java:16: error"
+dolphin3:8b,Using FutureTask to preload data that is needed later. M1,Compilation Errors,Syntax error,"./temp_compile/DreamWeaver.java:38: error: unreported exception Throwable; must be caught or declared to be thrown
+                throw e.getCause();
+                ^
+1 error"
+dolphin3:8b,Using FutureTask to preload data that is needed later. M2,Compilation Errors,Missing package,"./temp_compile/Main.java:12: error: cannot find symbol
+    private FutureTask<Relic> futureTask;
+            ^
+  symbol:   class FutureTask
+  location: class PhantomLoader
+./temp_compile/Main.java:23: error: cannot find symbol
+    public Relic get() throws InterruptedException, ExecutionException {
+"
+dolphin3:8b,Using FutureTask to preload data that is needed later. M3,Compilation Errors,Syntax error,"./temp_compile/ConstellationCastException.java:19: error: incompatible types: cannot infer type arguments for FutureTask<>
+            futureTask = new FutureTask<>(new Callable<Void>() {
+                                       ^
+    reason: inference variable V has incompatible equality constraints "
+dolphin3:8b,Waiting for results to be calculated in parallel. M1,Compilation Errors,Syntax error,"./temp_compile/Main.java:46: error: cannot find symbol
+                results.add(((WeavedTalisman) talisman).getValue());
+                                                       ^
+  symbol:   method getValue()
+  location: class WeavedTalisman
+./temp_compile/Main.java:64: error: cannot find symbol
+ "
+dolphin3:8b,Waiting for results to be calculated in parallel. M2,Compilation Errors,Syntax error,"./temp_compile/Main.java:44: error: children has private access in RuneNode
+        for (RuneNode child : node.children) {
+                                  ^
+./temp_compile/Main.java:45: error: no suitable method found for add(<anonymous Callable<Integer>>)
+            futures.add(new Callable<Inte"
+dolphin3:8b,Waiting for results to be calculated in parallel. M3,Compilation Errors,Syntax error,"./temp_compile/Main.java:104: error: incompatible types: Future<CAP#1> cannot be converted to int
+                futures.set(future, result);
+                            ^
+  where CAP#1 is a fresh type-variable:
+    CAP#1 extends Object from capture of ?
+./temp_compile/Main.java:114: error: incompa"
+dolphin3:8b,Inducing a lock ordering to avoid deadlock. M1,Compilation Errors,Syntax error,"./temp_compile/Main.java:102: error: method submit(Runnable) is already defined in class TreasureTransfer
+    public Future<?> submit(Runnable task) {
+                     ^
+./temp_compile/Main.java:52: error: cannot find symbol
+            otherVault.withdraw(amount.getAmount());
+                  "
+dolphin3:8b,Inducing a lock ordering to avoid deadlock. M2,Compilation Errors,Syntax error,"./temp_compile/Hoard.java:46: error: 'void' type not allowed here
+        if (amount >= 2 && otherHoard.lock()) { // Locking logic here
+                   ^
+./temp_compile/Hoard.java:97: error: constructor Hoard in class Hoard cannot be applied to given types;
+        Hoard hoard1 = new Hoard(0, new"
+dolphin3:8b,Inducing a lock ordering to avoid deadlock. M3,Compilation Errors,Syntax error,"./temp_compile/Main.java:134: error: incompatible types: VaultNode cannot be converted to Runnable
+            executor.execute(node1);
+                             ^
+./temp_compile/Main.java:136: error: incompatible types: VaultNode cannot be converted to Runnable
+            executor.execute(node2"
+dolphin3:8b,Bounded buffer using Semaphore. M2,Compilation Errors,Syntax error,"./temp_compile/CrystalCarousel.java:94: error: class Main is public, should be declared in a file named Main.java
+public class Main {
+       ^
+1 error"
+dolphin3:8b,Bounded buffer using Semaphore. M3,Compilation Errors,Syntax error,"./temp_compile/PotionLoop.java:96: error: incompatible types: String cannot be converted to PotionLoop
+                Potion potion = new Potion(""Sample Potion"");
+                                           ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output"
+dolphin3:8b,Wrapping a Map with a read-write lock. M2,Compilation Errors,Syntax error,"./temp_compile/SigilLedger.java:13: error: cannot find symbol
+        try (var rwlock = lock.readLock()) {
+             ^
+  symbol:   class var
+  location: class SigilLedger
+./temp_compile/SigilLedger.java:17: error: cannot find symbol
+            rwlock.unlock();
+            ^
+  symbol:   variable "
+dolphin3:8b,Wrapping a Map with a read-write lock. M3,Compilation Errors,Syntax error,"./temp_compile/EnchantedRegistry.java:96: error: cannot find symbol
+        EnchantedRegistry<String> registry = new EnchantedRegistry<>(Map.of(""sword"", ""sharp"", ""shield"", ""durable""));
+                                                                        ^
+  symbol:   method of(String,String,Strin"
+gemma2:27b,Using a factory method to prevent the this reference from escaping during construction. M0,Compilation Errors,Syntax error,"./temp_compile/Main.java:39: error: doSomething() has private access in SafeListener
+        safeListener.doSomething();
+                    ^
+1 error"
+gemma2:27b,Vehicle tracker that safely publishes underlying state. M0,Compilation Errors,Syntax error,"./temp_compile/Main.java:32: error: cannot find symbol
+        return Map.copyOf(vehicleLocations);
+                  ^
+  symbol:   method copyOf(Map<String,SafePoint>)
+  location: interface Map
+1 error"
+gemma2:27b,Waiting for results to be calculated in parallel. M0,Compilation Errors,Syntax error,"./temp_compile/Main.java:118: error: illegal character: '`'
+}```
+ ^
+./temp_compile/Main.java:118: error: illegal character: '`'
+}```
+  ^
+./temp_compile/Main.java:118: error: illegal character: '`'
+}```
+   ^
+./temp_compile/Main.java:118: error: reached end of file while parsing
+}```
+    ^
+4 errors"
+gemma2:27b,Wrapping a Map with a read-write lock. M0,Compilation Errors,Syntax error,"./temp_compile/Main.java:128: error: illegal character: '`'
+}```
+ ^
+./temp_compile/Main.java:128: error: illegal character: '`'
+}```
+  ^
+./temp_compile/Main.java:128: error: illegal character: '`'
+}```
+   ^
+./temp_compile/Main.java:128: error: reached end of file while parsing
+}```
+    ^
+4 errors"
+gpt-4o,Using confinement to ensure thread safety. M2,Compilation Errors,Syntax error,"./temp_compile/PersonSetProgram.java:16: error: cannot find symbol
+                personSet.register(new SimplePerson(""Person"" + i));
+                                       ^
+  symbol:   class SimplePerson
+  location: class PersonSetProgram
+./temp_compile/PersonSetProgram.java:22: error: cannot fin"
+gpt-4o,Publishing an object. M1,Compilation Errors,Syntax error,"./temp_compile/Prophecies.java:6: error: cannot find symbol
+import java.util.concurrent.ExecutedTask;
+                           ^
+  symbol:   class ExecutedTask
+  location: package java.util.concurrent
+1 error"
+gpt-4o,Immutable Point class used by DelegatingVehicleTracker. M2,Compilation Errors,Missing package,"./temp_compile/FungloonRealm.java:5: error: cannot find symbol
+        ExecutorService executorService = java.util.concurrent.Executors.newFixedThreadPool(numberOfThreads);
+        ^
+  symbol:   class ExecutorService
+  location: class FungloonRealm
+1 error"
+gpt-4o,Delegating thread safety to a ConcurrentHashMap. M3,Compilation Errors,Syntax error,"./temp_compile/PhantomGliderTracker.java:51: error: cannot find symbol
+        Map<String, Nimbus> initialGliders = Map.of(
+                                                ^
+  symbol:   method of(String,Nimbus,String,Nimbus,String,Nimbus)
+  location: interface Map
+1 error"
+gpt-4o,Using a factory method to prevent the this reference from escaping during construction. M2,Compilation Errors,Syntax error,"./temp_compile/CelestialScribe.java:37: error: incompatible types: CosmicEvent is not a functional interface
+                        listener.onCosmicEvent(() -> ""A cosmic event"");
+                                               ^
+    no abstract method found in interface CosmicEvent
+Note: Some messa"
+gpt-4o,Using a factory method to prevent the this reference from escaping during construction. M3,Compilation Errors,Missing package,"./temp_compile/GoblinEcho.java:25: error: cannot find symbol
+        ExecutorService executorService = Executors.newFixedThreadPool(1);
+        ^
+  symbol:   class ExecutorService
+  location: class GoblinEcho
+./temp_compile/GoblinEcho.java:25: error: cannot find symbol
+        ExecutorService execut"
+gpt-4o,Caching the last result using a volatile reference to an immutable holder object. M0,Compilation Errors,Syntax error,"./temp_compile/ConcurrentCacheServlet.java:1: error: package javax.servlet does not exist
+import javax.servlet.*;
+^
+./temp_compile/ConcurrentCacheServlet.java:2: error: package javax.servlet.http does not exist
+import javax.servlet.http.*;
+^
+./temp_compile/ConcurrentCacheServlet.java:10: error: cann"
+gpt-4o,Delegating thread safety to a ConcurrentHashMap. M0,Compilation Errors,Syntax error,"./temp_compile/DelegatingVehicleTracker.java:40: error: cannot find symbol
+        Map<String, Point> initialLocations = Map.of(
+                                                 ^
+  symbol:   method of(String,Point,String,Point,String,Point)
+  location: interface Map
+1 error"
+gpt-4o,Inducing a lock ordering to avoid deadlock. M0,Compilation Errors,Syntax error,"./temp_compile/MoneyTransferProgram.java:122: error: cannot find symbol
+                new Helper().transfer();
+                    ^
+  symbol:   class Helper
+  location: class TransferHelper
+1 error"
+gpt-4o,Nonblocking stack using Treiber's algorithm. M0,Compilation Errors,Syntax error,"./temp_compile/NonBlockingStack.java:23: error: cannot assign a value to final variable next
+            newNode.next = currentTop;
+                   ^
+1 error"
+gpt-4o,Using confinement to ensure thread safety. M0,Compilation Errors,Third-party library usage,"./temp_compile/Main.java:10: error: cannot find symbol
+                Person person = new PersonImpl(""Person"" + i);
+                ^
+  symbol:   class Person
+  location: class Main
+./temp_compile/Main.java:18: error: cannot find symbol
+                Person person = new PersonImpl(""Person"" + i);
+"
+gpt-5,Immutable Point class used by DelegatingVehicleTracker. M1,Compilation Errors,Syntax error,"./temp_compile/Main.java:7: error: cannot find symbol
+import java.util.concurrent.LongAdder;
+                           ^
+  symbol:   class LongAdder
+  location: package java.util.concurrent
+./temp_compile/Main.java:30: error: cannot find symbol
+        LongAdder productSum = new LongAdder();
+      "
+gpt-5,Custom thread factory. M0,Compilation Errors,Syntax error,"./temp_compile/ConcurrentProgram.java:17: error: incompatible types: ArrayList<String> cannot be converted to List<Callable<String>>
+        List<Callable<String>> tasks = new ArrayList<String>();
+                                       ^
+1 error"
+llama3.3:70b,Immutable class built out of mutable underlying objects. M1,Compilation Errors,Missing package,"./temp_compile/Main.java:2: error: cannot find symbol
+    private final Set<String> cats;
+                  ^
+  symbol:   class Set
+  location: class CosmicCats
+./temp_compile/Main.java:4: error: cannot find symbol
+    public CosmicCats(Set<String> cats) {
+                      ^
+  symbol:   class S"
+llama3.3:70b,Immutable class built out of mutable underlying objects. M2,Compilation Errors,Missing package,"./temp_compile/Main.java:2: error: cannot find symbol
+    private final Set<String> labels;
+                  ^
+  symbol:   class Set
+  location: class MysticMonkeys
+./temp_compile/Main.java:5: error: cannot find symbol
+        this.labels = new HashSet<>();
+                          ^
+  symbol:   c"
+llava:34b,Returning a static copy of the location set instead of a 'live' one. M0,Compilation Errors,Syntax error,"./temp_compile/VehicleLocation.java:14: error: class DelegatingVehicleTracker is public, should be declared in a file named DelegatingVehicleTracker.java
+public class DelegatingVehicleTracker {
+       ^
+./temp_compile/VehicleLocation.java:43: error: cannot find symbol
+    private static class Unmodi"
+llava:34b,ServerStatus refactored to use split locks. M0,Compilation Errors,Syntax error,"./temp_compile/ServerStatusAfterSplit.java:43: error: local variables referenced from a lambda expression must be final or effectively final
+            executor.submit(() -> server.addUser(""user_"" + i));
+                                                           ^
+./temp_compile/ServerStatusAfterSp"
+llava:34b,Simple thread-safe counter using the Java monitor pattern. M0,Compilation Errors,Missing package,"./temp_compile/Counter.java:31: error: class Main is public, should be declared in a file named Main.java
+public class Main {
+       ^
+./temp_compile/Counter.java:38: error: non-static method increment() cannot be referenced from a static context
+                    increment();
+                    "
+llava:34b,Simulated CAS operation. M0,Compilation Errors,Syntax error,"./temp_compile/SimulatedCAS.java:13: error: cannot find symbol
+        boolean updated = value.compareAndExchange(expectedValue, newValue, 0);
+                               ^
+  symbol:   method compareAndExchange(int,int,int)
+  location: variable value of type AtomicInteger
+./temp_compile/Simulated"
+llava:34b,Thread confinement of local primitive and reference variables. M0,Compilation Errors,Syntax error,"./temp_compile/ArkLoader.java:50: error: incompatible types: List<List<ArkLoader.Animal>> cannot be converted to Map<Gender,List<ArkLoader.Animal>>
+        Map<Gender, List<Animal>> groupedCandidates = groupByGender(candidates);
+                                                                   ^
+./"
+llava:34b,Thread-safe lazy initialization. M0,Compilation Errors,Missing package,"./temp_compile/LazyInit.java:26: error: cannot find symbol
+        ExecutorService executor = Executors.newFixedThreadPool(2); // create a fixed-size thread pool with 2 threads
+        ^
+  symbol:   class ExecutorService
+  location: class LazyInit
+./temp_compile/LazyInit.java:26: error: cannot find "
+llava:34b,Using CountDownLatch for starting and stopping threads in timing tests. M0,Compilation Errors,Syntax error,"./temp_compile/TimeTasks.java:3: error: cannot find symbol
+    private static final CountDownLatch startGate = new CountDownLatch(THREADS);
+                         ^
+  symbol:   class CountDownLatch
+  location: class TimeTasks
+./temp_compile/TimeTasks.java:4: error: cannot find symbol
+    private s"
+llava:34b,Using FutureTask to preload data that is needed later. M0,Compilation Errors,Missing package,"./temp_compile/Preloader.java:11: error: cannot find symbol
+    private final FutureTask<ProductInfo> task;
+                  ^
+  symbol:   class FutureTask
+  location: class Preloader
+./temp_compile/Preloader.java:11: error: cannot find symbol
+    private final FutureTask<ProductInfo> task;
+       "
+llava:34b,Using Semaphore to bound a collection. M0,Compilation Errors,Syntax error,"./temp_compile/BoundedHashSet.java:61: error: cannot find symbol
+        Set<Integer> expected = new HashSet<>(Arrays.asList(0, 1));
+                                              ^
+  symbol:   variable Arrays
+  location: class BoundedHashSet<T>
+  where T is a type-variable:
+    T extends Object decl"
+llava:34b,Using a factory method to prevent the this reference from escaping during construction. M0,Compilation Errors,Syntax error,"./temp_compile/Main.java:45: error: cannot find symbol
+    void onEvent(Event event);
+                 ^
+  symbol:   class Event
+  location: interface EventListener
+./temp_compile/Main.java:17: error: non-static method createEventListener() cannot be referenced from a static context
+        safeList"
+llava:34b,Using a volatile field to hold cancellation state. M0,Compilation Errors,Missing package,"./temp_compile/PrimeNumbers.java:13: error: cannot find symbol
+    public static List<Integer> generatePrimes() throws InterruptedException {
+                  ^
+  symbol:   class List
+  location: class PrimeNumbers
+./temp_compile/PrimeNumbers.java:14: error: cannot find symbol
+        List<Integer>"
+llava:34b,Using confinement to ensure thread safety. M0,Compilation Errors,Missing package,"./temp_compile/PersonSet.java:31: error: cannot find symbol
+        final ExecutorService executor = Executors.newFixedThreadPool(2);
+              ^
+  symbol:   class ExecutorService
+  location: class PersonSet
+./temp_compile/PersonSet.java:31: error: cannot find symbol
+        final ExecutorServic"
+llava:34b,Using interruption for cancellation. M0,Compilation Errors,Syntax error,"./temp_compile/Main.java:55: error: cannot find symbol
+                int num = ThreadLocalRandom.current().nextInt(min, max + 1);
+                          ^
+  symbol:   variable ThreadLocalRandom
+  location: class PrimeProducer
+1 error"
+llava:34b,Vehicle tracker that safely publishes underlying state. M0,Compilation Errors,Syntax error,"./temp_compile/PublishingVehicleTracker.java:9: error: cannot find symbol
+    private final ConcurrentHashMap<String, SafePoint> locationMap = new ConcurrentHashMap<>();
+                                            ^
+  symbol:   class SafePoint
+  location: class PublishingVehicleTracker
+./temp_compil"
+llava:34b,Waiting for results to be calculated in parallel. M0,Compilation Errors,Syntax error,"./temp_compile/Main.java:12: error: cannot find symbol
+class SequentialProcessor implements Consumer<Element> {
+                                     ^
+  symbol: class Consumer
+./temp_compile/Main.java:25: error: cannot find symbol
+class ParallelProcessor implements Consumer<Collection<Node>> {
+     "
+llava:34b,Wrapping a Map with a read-write lock. M0,Compilation Errors,Missing package,"./temp_compile/ReadWriteMap.java:5: error: cannot find symbol
+    private final Map<K, V> map;
+                      ^
+  symbol:   class K
+  location: class ReadWriteMap
+./temp_compile/ReadWriteMap.java:5: error: cannot find symbol
+    private final Map<K, V> map;
+                         ^
+  symbol"
+magicoder:7b,Counting sheep. M2,Compilation Errors,Syntax error,"./temp_compile/Wanderer.java:16: error: unreported exception InterruptedException; must be caught or declared to be thrown
+        tryToSleep();
+                  ^
+1 error"
+magicoder:7b,Counting sheep. M3,Compilation Errors,Missing package,"./temp_compile/Scout.java:23: error: cannot find symbol
+        ExecutorService executor = Executors.newFixedThreadPool(3); // 3 threads max
+        ^
+  symbol:   class ExecutorService
+  location: class Scout
+./temp_compile/Scout.java:23: error: cannot find symbol
+        ExecutorService executor = "
+magicoder:7b,Immutable class built out of mutable underlying objects. M1,Compilation Errors,Syntax error,"./temp_compile/CosmicCats.java:66: error: non-static variable this cannot be referenced from a static context
+        executor.submit(new MainThread());
+                        ^
+1 error"
+magicoder:7b,Immutable class built out of mutable underlying objects. M2,Compilation Errors,Missing package,"./temp_compile/MysticMonkeys.java:11: error: non-static method isMonkeyPresent(String) cannot be referenced from a static context
+        Future<Boolean> isBananaPresent = executor.submit(() -> isMonkeyPresent(""Banana""));
+                                                                ^
+./temp_compi"
+magicoder:7b,Returning a static copy of the location set instead of a 'live' one. M1,Compilation Errors,Syntax error,"./temp_compile/DelegatingDeviceTracker.java:24: error: incompatible types: Position cannot be converted to Optional<Position>
+        return positions.get(gadgetId);
+                            ^
+1 error"
+magicoder:7b,Returning a static copy of the location set instead of a 'live' one. M2,Compilation Errors,Syntax error,"./temp_compile/DelegatingParcelTracker.java:11: error: local variables referenced from a lambda expression must be final or effectively final
+            Thread thread = new Thread(() -> tracker.assignPackagePosition(packageId, i * 5));
+                                                               "
+magicoder:7b,Avoiding lock-ordering deadlock using try Lock. M1,Compilation Errors,Syntax error,"./temp_compile/Locker.java:56: error: class Main is public, should be declared in a file named Main.java
+public class Main {
+       ^
+./temp_compile/Locker.java:47: error: cannot find symbol
+        while(!locker.lock.waitFor(5, TimeUnit.SECONDS)) { // Wait for lock to be released or timeout
+       "
+magicoder:7b,Avoiding lock-ordering deadlock using try Lock. M2,Compilation Errors,Missing package,"./temp_compile/Main.java:46: error: cannot find symbol
+        private final ReentrantLock lock = new ReentrantLock();
+                      ^
+  symbol:   class ReentrantLock
+  location: class Container
+./temp_compile/Main.java:21: error: cannot find symbol
+        if (!swapElements(originContainer,"
+magicoder:7b,Avoiding lock-ordering deadlock using try Lock. M3,Compilation Errors,Syntax error,"./temp_compile/Main.java:29: error: cannot find symbol
+    static boolean moveWidgetsBetweenBins(Bin source, Bin target, int numWidgetsToMove, long timeoutDuration, TimeUnit timeUnit) {
+                                          ^
+  symbol:   class Bin
+  location: class Main
+./temp_compile/Main.java:"
+magicoder:7b,Candidate for lock splitting. M2,Compilation Errors,Missing package,"./temp_compile/ServerStatusBeforeSplit.java:5: error: cannot find symbol
+    private final Set<String> notebooks = new HashSet<>();
+                  ^
+  symbol:   class Set
+  location: class ServerStatusBeforeSplit
+./temp_compile/ServerStatusBeforeSplit.java:6: error: cannot find symbol
+    private"
+magicoder:7b,Using confinement to ensure thread safety. M1,Compilation Errors,Syntax error,"./temp_compile/Main.java:9: error: Person is abstract; cannot be instantiated
+                personSet.addPerson(new Person(""John Doe "" + i, 20+i));
+                                    ^
+./temp_compile/Main.java:15: error: Person is abstract; cannot be instantiated
+                personSet.contain"
+magicoder:7b,Using confinement to ensure thread safety. M3,Compilation Errors,Syntax error,"./temp_compile/Main.java:50: error: duplicate class: Person
+class Person implements Person {
+^
+./temp_compile/Main.java:6: error: Person is abstract; cannot be instantiated
+        final Person person1 = new Person(""John"", ""Doe"");
+                               ^
+2 errors"
+magicoder:7b,Vehicle tracker that safely publishes underlying state. M1,Compilation Errors,Syntax error,"./temp_compile/PublishingVehicleTracker.java:25: error: 'else' without 'if'
+        else 
+        ^
+1 error"
+magicoder:7b,Using a volatile field to hold cancellation state. M0,Compilation Errors,Missing package,"./temp_compile/Main.java:3: error: cannot find symbol
+    private static List<Integer> primes = new ArrayList<>(); 
+                   ^
+  symbol:   class List
+  location: class Main
+./temp_compile/Main.java:5: error: cannot find symbol
+    public static void main(String[] args) throws InterruptedEx"
+magicoder:7b,Using confinement to ensure thread safety. M0,Compilation Errors,Missing package,"./temp_compile/Main.java:36: error: cannot find symbol
+@ThreadSafe
+ ^
+  symbol: class ThreadSafe
+./temp_compile/Main.java:7: error: cannot find symbol
+        ExecutorService executor = Executors.newFixedThreadPool(3); // 3 threads are enough for this program
+        ^
+  symbol:   class ExecutorServ"
+magicoder:7b,Vehicle tracker that safely publishes underlying state. M0,Compilation Errors,Syntax error,"./temp_compile/PublishingVehicleTracker.java:57: error: class, interface, or enum expected
+public static void main(String[] args) {
+              ^
+./temp_compile/PublishingVehicleTracker.java:60: error: class, interface, or enum expected
+    try {
+    ^
+./temp_compile/PublishingVehicleTracker.java:"
+magicoder:7b,Waiting for results to be calculated in parallel. M0,Compilation Errors,Syntax error,"./temp_compile/Node.java:33: error: class Element is public, should be declared in a file named Element.java
+public interface Element extends Supplier<String> {
+       ^
+./temp_compile/Node.java:5: error: Node is not abstract and does not override abstract method get() in Supplier
+public class Node "
+mistral:7b,Counting sheep. M2,Compilation Errors,Syntax error,"./temp_compile/Main.java:20: error: cannot find symbol
+    public static ExecutorService executor = ExecutionUtils.newFixedThreadPool(2);
+                                             ^
+  symbol:   variable ExecutionUtils
+  location: class Main
+1 error"
+mistral:7b,Counting sheep. M3,Compilation Errors,Syntax error,"./temp_compile/Main.java:29: error: unreported exception InterruptedException; must be caught or declared to be thrown
+                Thread.sleep(100);
+                            ^
+./temp_compile/Main.java:48: error: unreported exception InterruptedException; must be caught or declared to be thro"
+mistral:7b,Immutable class built out of mutable underlying objects. M1,Compilation Errors,Syntax error,"./temp_compile/Main.java:39: error: cannot assign a value to final variable cats
+                cats = new CosmicCats(new HashSet<>(Arrays.asList(cats.getIdsList(), id)));
+                ^
+./temp_compile/Main.java:39: error: incompatible types: cannot infer type arguments for HashSet<>
+           "
+mistral:7b,Immutable class built out of mutable underlying objects. M2,Compilation Errors,Syntax error,"./temp_compile/Main.java:48: error: no suitable method found for add(Future<CAP#1>)
+            futures.add(executor.submit(checker));
+                   ^
+    method Collection.add(Future<List<String>>) is not applicable
+      (argument mismatch; Future<CAP#2> cannot be converted to Future<List<Str"
+mistral:7b,Immutable class built out of mutable underlying objects. M3,Compilation Errors,Syntax error,"./temp_compile/Sprite.java:33: error: cannot find symbol
+    private static final Srite SPARK = new Sprite(""Spark"");
+                         ^
+  symbol:   class Srite
+  location: class StellarSprites
+./temp_compile/Sprite.java:29: error: StellarSprites is not abstract and does not override abstract"
+mistral:7b,Returning a static copy of the location set instead of a 'live' one. M2,Compilation Errors,Syntax error,"./temp_compile/Main.java:59: error: incompatible types: no instance(s) of type variable(s) K,V exist so that Map<K,V> conforms to ConcurrentMap<String,Position>
+            return unmodifiableMap(packages);
+                                  ^
+  where K,V are type-variables:
+    K extends Object decl"
+mistral:7b,Returning a static copy of the location set instead of a 'live' one. M3,Compilation Errors,Missing package,"./temp_compile/Main.java:32: error: invalid method reference
+                .map(Robot::coordinates);
+                     ^
+  cannot find symbol
+    symbol:   method coordinates()
+    location: class Robot
+./temp_compile/Main.java:36: error: incompatible types: inference variable V#1 has incompati"
+mistral:7b,Vehicle tracker that safely publishes underlying state. M0,Compilation Errors,Syntax error,"./temp_compile/Main.java:14: error: cannot find symbol
+class VehicleLocation extends HashMap<String, SafePoint> implements Serializable {
+                                                                    ^
+  symbol: class Serializable
+./temp_compile/Main.java:20: error: method scheduleAtFixedRate "
+mistral:7b,Waiting for results to be calculated in parallel. M0,Compilation Errors,Missing package,"./temp_compile/Main.java:23: error: cannot find symbol
+    private final List<Node<T>> children;
+                  ^
+  symbol:   class List
+  location: class InternalNode<T>
+  where T is a type-variable:
+    T extends Object declared in class InternalNode
+./temp_compile/Main.java:25: error: cannot f"
+mistral:7b,Wrapping a Map with a read-write lock. M0,Compilation Errors,Syntax error,"./temp_compile/Main.java:112: error: cannot find symbol
+            int key = rand.nextInt(3);
+                      ^
+  symbol:   variable rand
+  location: class WriterTask
+./temp_compile/Main.java:113: error: cannot find symbol
+            System.out.println(Thread.currentThread().getName() + "" wr"
+mixtral:8x7b,Counting sheep. M3,Compilation Errors,Syntax error,"./temp_compile/FireflyScout.java:26: error: countSomeSheep() has private access in Scout
+        executor.submit(() -> scout.countSomeSheep());
+                                   ^
+1 error"
+mixtral:8x7b,Immutable class built out of mutable underlying objects. M1,Compilation Errors,Syntax error,"./temp_compile/CosmicCats.java:10: error: no suitable method found for newKeySet(Set<String>)
+        this.catIds = ConcurrentHashMap.newKeySet(catIds);
+                                       ^
+    method ConcurrentHashMap.<K#1>newKeySet() is not applicable
+      (cannot infer type-variable(s) K#1
+ "
+mixtral:8x7b,Immutable class built out of mutable underlying objects. M2,Compilation Errors,Syntax error,"./temp_compile/MysticMonkeys.java:3: error: cannot find symbol
+import java.util.ImmutableSet;
+                ^
+  symbol:   class ImmutableSet
+  location: package java.util
+./temp_compile/MysticMonkeys.java:8: error: cannot find symbol
+    private static final Set<String> MONKEY_LABELS = ImmutableSe"
+mixtral:8x7b,Immutable class built out of mutable underlying objects. M3,Compilation Errors,Missing package,"./temp_compile/StellarSprites.java:36: error: cannot find symbol
+        Set<String> sprites = Set.of(""Flare"", ""Glint"", ""Spark"");
+                                 ^
+  symbol:   method of(String,String,String)
+  location: interface Set
+./temp_compile/StellarSprites.java:39: error: cannot find symbol
+"
+mixtral:8x7b,Returning a static copy of the location set instead of a 'live' one. M1,Compilation Errors,Missing package,"./temp_compile/DelegatingDeviceTracker.java:70: error: cannot find symbol
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        ^
+  symbol:   class ExecutorService
+  location: class DelegatingDeviceTracker
+./temp_compile/DelegatingDeviceTracker.java:70: error: cannot fin"
+mixtral:8x7b,Returning a static copy of the location set instead of a 'live' one. M2,Compilation Errors,Missing package,"./temp_compile/Main.java:77: error: cannot find symbol
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        ^
+  symbol:   class ExecutorService
+  location: class Main
+./temp_compile/Main.java:77: error: cannot find symbol
+        ExecutorService executor = Executors.newFixedTh"
+opencoder:8b,Nonblocking counter using CAS. M0,Compilation Errors,Syntax error,"./temp_compile/Main.java:13: error: local variables referenced from a lambda expression must be final or effectively final
+                if (i % 3 == 0) { // simulate a rare condition
+                    ^
+1 error"
+opencoder:8b,Nonblocking stack using Treiber's algorithm. M0,Compilation Errors,Syntax error,"./temp_compile/Stack.java:12: error: cannot find symbol
+    final AtomicReference<Node<Integer>> top =
+          ^
+  symbol:   class AtomicReference
+  location: class Stack
+./temp_compile/Stack.java:7: error: cannot find symbol
+        AtomicReference<Node<T>> next = new AtomicReference<>();
+       "
+opencoder:8b,Publishing an object. M0,Compilation Errors,Missing package,"./temp_compile/Secrets.java:29: error: cannot find symbol
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+        ^
+  symbol:   class ExecutorService
+  location: class Secrets
+./temp_compile/Secrets.java:29: error: cannot find symbol
+        ExecutorService executor = Executors.n"
+opencoder:8b,Reducing lock duration. M0,Compilation Errors,Syntax error,"./temp_compile/BetterAttributeStore.java:24: error: cannot find symbol
+            return Pattern.matches(regexp, locationValue);
+                   ^
+  symbol:   variable Pattern
+  location: class BetterAttributeStore
+1 error"
+opencoder:8b,Using FutureTask to preload data that is needed later. M0,Compilation Errors,Syntax error,"./temp_compile/Preloader.java:35: error: constructor DataLoadException in class DataLoadException cannot be applied to given types;
+            throw new DataLoadException(""Data load failed"", ex);
+                  ^
+  required: String
+  found: String,Exception
+  reason: actual and formal argument l"
+opencoder:8b,Using a factory method to prevent the this reference from escaping during construction. M0,Compilation Errors,Syntax error,"./temp_compile/SafeListener.java:15: error: variable safeListener might not have been initialized
+                safeListener.doSomething(e);
+                ^
+1 error"
+opencoder:8b,Using confinement to ensure thread safety. M0,Compilation Errors,Syntax error,"./temp_compile/PersonSet.java:2: error: package net.jcip.annotations does not exist
+import net.jcip.annotations.*;
+^
+./temp_compile/PersonSet.java:4: error: cannot find symbol
+@ThreadSafe
+ ^
+  symbol: class ThreadSafe
+2 errors"
+opencoder:8b,Using interruption for cancellation. M0,Compilation Errors,Syntax error,"./temp_compile/Main.java:75: error: constructor Object in class Object cannot be applied to given types;
+        super(name);
+        ^
+  required: no arguments
+  found: String
+  reason: actual and formal argument lists differ in length
+1 error"
+opencoder:8b,Vehicle tracker that safely publishes underlying state. M0,Compilation Errors,Syntax error,"./temp_compile/PublishingVehicleTracker.java:31: error: constructor SafePoint in class SafePoint cannot be applied to given types;
+        return new SafePoint(locations.get(vehicleId));
+               ^
+  required: int,int
+  found: SafePoint
+  reason: actual and formal argument lists differ in leng"
+opencoder:8b,Waiting for results to be calculated in parallel. M0,Compilation Errors,Syntax error,"./temp_compile/Main.java:29: error: cannot find symbol
+        return CompletableFixed.allOf(futures.toArray(new CompletableFuture[0])).thenRun(() -> System.out.println(""All nodes processed""));
+               ^
+  symbol:   variable CompletableFixed
+  location: class Node
+1 error"
+opencoder:8b,Wrapping a Map with a read-write lock. M0,Compilation Errors,Syntax error,"./temp_compile/ReadWriteMap.java:25: error: class, interface, or enum expected
+public static void main(String[] args) throws InterruptedException {
+              ^
+./temp_compile/ReadWriteMap.java:27: error: class, interface, or enum expected
+    ReadWriteMap readWriteMap = new ReadWriteMap(sharedMa"
+phi4:14b,Immutable class built out of mutable underlying objects. M2,Compilation Errors,Syntax error,"./temp_compile/MysticMonkeys.java:9: error: cannot find symbol
+    private final Set<String> labels = Collections.unmodifiableSet(new HashSet<>(Set.of(""Banana"", ""Coco"", ""Mango"")));
+                                                                                    ^
+  symbol:   method of(String,Stri"
+phi4:14b,Returning a static copy of the location set instead of a 'live' one. M2,Compilation Errors,Syntax error,"./temp_compile/DelegatingParcelTracker.java:21: error: incomparable types: boolean and <null>
+        return packagePositions.replace(packageId, null, position) != null;
+                                                                   ^
+./temp_compile/DelegatingParcelTracker.java:30: error: cannot"
+phi4:14b,Returning a static copy of the location set instead of a 'live' one. M3,Compilation Errors,Syntax error,"./temp_compile/DelegatingRobotTracker.java:21: error: incomparable types: boolean and <null>
+        return robotCoordinates.replace(robotId, robotCoordinates.get(robotId), newCoordinate) != null;
+                                                                                               ^
+1 erro"
+phi4:14b,Candidate for lock elision. M1,Compilation Errors,Syntax error,"./temp_compile/QuantumQuokkas.java:13: error: cannot find symbol
+        this.quokkaLabels = Collections.unmodifiableList(List.of(""Zig"", ""Zag"", ""Zog""));
+                                                             ^
+  symbol:   method of(String,String,String)
+  location: interface List
+1 error"
+phi4:14b,Avoiding lock-ordering deadlock using try Lock. M1,Compilation Errors,Syntax error,"./temp_compile/ParcelLocker.java:82: error: constructor ParcelCount in class ParcelCount cannot be applied to given types;
+            this.parcelCount = new ParcelCount(0);
+                               ^
+  required: no arguments
+  found: int
+  reason: actual and formal argument lists differ in le"
+phi4:14b,Avoiding lock-ordering deadlock using try Lock. M2,Compilation Errors,Syntax error,"./temp_compile/DeadlockAvoidanceSwap.java:62: error: unreported exception InsufficientElementsException; must be caught or declared to be thrown
+                                origin.getElementCount().remove(elementsToSwap);
+                                                               ^
+./temp_co"
+phind-codellama:34b,Using FutureTask to preload data that is needed later. M1,Compilation Errors,Syntax error,"./temp_compile/DreamWeaver.java:36: error: unreported exception VisionCastException; must be caught or declared to be thrown
+        Vision v = dw.get();
+                         ^
+1 error"
+phind-codellama:34b,Using FutureTask to preload data that is needed later. M2,Compilation Errors,Syntax error,"./temp_compile/PhantomLoader.java:18: error: unreported exception RelicCastException; must be caught or declared to be thrown
+                throw (RelicCastException) cause;
+                ^
+1 error"
+phind-codellama:34b,Using FutureTask to preload data that is needed later. M3,Compilation Errors,Syntax error,"./temp_compile/Main.java:40: error: incompatible types: Constellation is not a functional interface
+        return () -> {}; // Just a placeholder instance of Constellation.
+               ^
+    no abstract method found in interface Constellation
+1 error"
+phind-codellama:34b,Waiting for results to be calculated in parallel. M1,Compilation Errors,Syntax error,"./temp_compile/Talisman.java:35: error: cannot find symbol
+    T enchant() {
+    ^
+  symbol:   class T
+  location: class Talisman
+1 error"
+phind-codellama:34b,Waiting for results to be calculated in parallel. M2,Compilation Errors,Syntax error,"./temp_compile/Main.java:23: error: cannot find symbol
+            Future<?> future = executor.submit(() -> charm.invoke());
+                                       ^
+  symbol:   method submit(()->charm.invoke())
+  location: variable executor of type Executor
+1 error"
+phind-codellama:34b,Inducing a lock ordering to avoid deadlock. M1,Compilation Errors,Syntax error,"./temp_compile/Main.java:62: error: gold has private access in Vault
+        System.out.println(""Vault 1: "" + v1.gold);
+                                           ^
+./temp_compile/Main.java:63: error: gold has private access in Vault
+        System.out.println(""Vault 2: "" + v2.gold);
+               "
+phind-codellama:34b,Inducing a lock ordering to avoid deadlock. M2,Compilation Errors,Syntax error,"./temp_compile/Main.java:40: error: amount has private access in GemAmount
+                        dest.gems.amount += n;
+                                 ^
+./temp_compile/Main.java:54: error: amount has private access in GemAmount
+                        dest.gems.amount += n;
+                     "
+phind-codellama:34b,Bounded buffer using Semaphore. M1,Compilation Errors,Syntax error,"./temp_compile/MagicalVault.java:37: error: no suitable method found for submit(Orb)
+        Future<Runnable> orb = (Future<Runnable>) service.submit(new Orb());
+                                                         ^
+    method ExecutorService.<T#1>submit(Callable<T#1>) is not applicable
+      ("
+phind-codellama:34b,Wrapping a Map with a read-write lock. M2,Compilation Errors,Syntax error,"./temp_compile/SigilLedger.java:96: error: class Main is public, should be declared in a file named Main.java
+public class Main {
+       ^
+./temp_compile/SigilLedger.java:6: error: cannot find symbol
+    private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+                  ^
+  "
+phind-codellama:34b,Simulated CAS operation. M3,Compilation Errors,Syntax error,"./temp_compile/EtherealCounter.java:17: error: cannot find symbol
+        return compareAndSwap(expectedAura, newAraua) == expectedAura;
+                                            ^
+  symbol:   variable newAraua
+  location: class EtherealCounter
+1 error"
+phind-codellama:34b,Eager initialization. M1,Compilation Errors,Missing package,"./temp_compile/Main.java:19: error: cannot find symbol
+        ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
+        ^
+  symbol:   class ExecutorService
+  location: class Main
+./temp_compile/Main.java:19: error: cannot find symbol
+        ExecutorService executorServi"
+phind-codellama:34b,Eager initialization. M2,Compilation Errors,Missing package,"./temp_compile/SingletonArtifact.java:22: error: class Main is public, should be declared in a file named Main.java
+public class Main {
+       ^
+./temp_compile/SingletonArtifact.java:23: error: cannot find symbol
+    private static final ExecutorService executor = Executors.newFixedThreadPool(3);
+  "
+phind-codellama:34b,Eager initialization. M3,Compilation Errors,Missing package,"./temp_compile/Main.java:27: error: cannot find symbol
+        ExecutorService service = Executors.newFixedThreadPool(THREAD_COUNT);
+        ^
+  symbol:   class ExecutorService
+  location: class Main
+./temp_compile/Main.java:27: error: cannot find symbol
+        ExecutorService service = Executors.n"
+phind-codellama:34b,Monitor-based vehicle tracker implementation. M1,Compilation Errors,Syntax error,"./temp_compile/Main.java:29: error: cannot infer type arguments for Constellation<>
+        Constellation<K, V> clone = new Constellation<>(map.size());
+                                    ^
+  reason: cannot infer type-variable(s) K,V
+    (argument mismatch; int cannot be converted to Constellation<"
+phind-codellama:34b,Monitor-based vehicle tracker implementation. M3,Compilation Errors,Syntax error,"./temp_compile/CelestialGriffinTracker.java:30: error: cannot find symbol
+        for (Entry<? extends K, ? extends V> entry : m.entrySet()) {
+             ^
+  symbol:   class Entry
+  location: class CelestialGriffinTracker
+./temp_compile/CelestialGriffinTracker.java:35: error: incompatible types: M"
+qwen3:32b,Wrapping a Map with a read-write lock. M3,Compilation Errors,Syntax error,"./temp_compile/EnchantedRegistry.java:5: error: cannot find symbol
+import java.util.concurrent.ReentrantReadWriteLock;
+                           ^
+  symbol:   class ReentrantReadWriteLock
+  location: package java.util.concurrent
+./temp_compile/EnchantedRegistry.java:16: error: cannot find symbol
+  "
+qwen3:32b,Monitor-based vehicle tracker implementation. M1,Compilation Errors,Missing package,"./temp_compile/ChronomanticDragonTracker.java:118: error: cannot find symbol
+        ExecutorService executor = java.util.concurrent.Executors.newFixedThreadPool(2);
+        ^
+  symbol:   class ExecutorService
+  location: class ChronomanticDragonTracker
+1 error"
+qwen3:32b,Monitor-based vehicle tracker implementation. M3,Compilation Errors,Syntax error,"./temp_compile/CelestialGriffinTracker.java:37: error: x has private access in MutableGem
+        gem.x = glowX;
+           ^
+./temp_compile/CelestialGriffinTracker.java:38: error: y has private access in MutableGem
+        gem.y = glowY;
+           ^
+2 errors"
+qwen3:32b,Driver loop that induces deadlock under typical conditions. M1,Compilation Errors,Missing package,"./temp_compile/SummonChaosOrbs.java:95: error: cannot find symbol
+            Random random = new Random();
+            ^
+  symbol:   class Random
+  location: class FluxThread
+./temp_compile/SummonChaosOrbs.java:95: error: cannot find symbol
+            Random random = new Random();
+                "
+qwen3:32b,Driver loop that induces deadlock under typical conditions. M2,Compilation Errors,Missing package,"./temp_compile/ChronoCrystalBalancer.java:70: error: cannot find symbol
+        private final Random random = new Random();
+                      ^
+  symbol:   class Random
+  location: class ResonanceThread
+./temp_compile/ChronoCrystalBalancer.java:70: error: cannot find symbol
+        private final"
+qwen3:32b,Driver loop that induces deadlock under typical conditions. M3,Compilation Errors,Missing package,"./temp_compile/GoblinGoldShuffle.java:35: error: cannot find symbol
+            Random random = new Random();
+            ^
+  symbol:   class Random
+  location: class TradeThread
+./temp_compile/GoblinGoldShuffle.java:35: error: cannot find symbol
+            Random random = new Random();
+           "
+qwen3:32b,Custom thread base class. M0,Compilation Errors,Syntax error,"./temp_compile/MyAppThread.java:7: error: cannot find symbol
+    private static final AtomicInteger counter = new AtomicInteger(0);
+                         ^
+  symbol:   class AtomicInteger
+  location: class MyAppThread
+./temp_compile/MyAppThread.java:8: error: cannot find symbol
+    private static"
+qwen3:32b,Using Semaphore to bound a collection. M0,Compilation Errors,Syntax error,"./temp_compile/BoundedHashSet.java:81: error: exception TimeoutException is never thrown in body of corresponding try statement
+        } catch (java.util.concurrent.TimeoutException e) {
+          ^
+./temp_compile/BoundedHashSet.java:80: error: unreported exception InterruptedException; must be cau"
+starcoder2:15b,Counting sheep. M1,Compilation Errors,Syntax error,"./temp_compile/Traveler.java:9: error: ';' expected
+        ExecutorService executorService = Executors.newFixedThreadPool(2));
+                                                                         ^
+./temp_compile/Traveler.java:15: error: ';' expected
+                    TimeUnit.SECONDS.sleep(1"
+starcoder2:15b,Counting sheep. M2,Compilation Errors,Syntax error,"./temp_compile/Wanderer.java:10: error: ';' expected
+            Thread.sleep(1000));
+                              ^
+./temp_compile/Wanderer.java:25: error: ';' expected
+        ExecutorService executorService = Executors.newFixedThreadPool(2));
+                                                     "
+starcoder2:15b,Counting sheep. M3,Compilation Errors,Syntax error,"./temp_compile/Scout.java:10: error: ';' expected
+                        Thread.sleep(1000));
+                                          ^
+./temp_compile/Scout.java:17: error: <identifier> expected
+        }), ""Observer"");
+           ^
+./temp_compile/Scout.java:17: error: illegal start of expression"
+starcoder2:15b,Immutable class built out of mutable underlying objects. M1,Compilation Errors,Syntax error,"./temp_compile/CosmicCats.java:10: error: ';' expected
+        identifiers.forEach(identifier -> identifiers.contains(identifier)))
+                                                                           ^
+./temp_compile/CosmicCats.java:11: error: ';' expected
+            .forEach(identifier -> t"
+starcoder2:15b,Immutable class built out of mutable underlying objects. M3,Compilation Errors,Syntax error,"./temp_compile/StellarSprites.java:33: error: ';' expected
+        ExecutorService executor = Executors.newFixedThreadPool(2));
+                                                                  ^
+./temp_compile/StellarSprites.java:35: error: ';' expected
+        executor.submit(() -> System.out.prin"
+starcoder2:15b,Returning a static copy of the location set instead of a 'live' one. M1,Compilation Errors,Syntax error,"./temp_compile/DelegatingDeviceTracker.java:10: error: ';' expected
+        this.gadgetPositions = Collections.unmodifiableMap(new HashMap<>(initialGadgetPositions))));
+                                                                                                 ^
+./temp_compile/DelegatingDeviceT"
+starcoder2:15b,Returning a static copy of the location set instead of a 'live' one. M2,Compilation Errors,Syntax error,"./temp_compile/DelegatingParcelTracker.java:8: error: ';' expected
+        this.packagePositions = new ConcurrentHashMap<>(initialPackagePositions));
+                                                                                ^
+./temp_compile/DelegatingParcelTracker.java:12: error: ';' expected
+"
+starcoder2:15b,Returning a static copy of the location set instead of a 'live' one. M3,Compilation Errors,Syntax error,"./temp_compile/DelegatingRobotTracker.java:9: error: ';' expected
+        robotCoordinates.computeIfAbsent(id, k -> new Point()))
+                                                              ^
+./temp_compile/DelegatingRobotTracker.java:14: error: ';' expected
+        return Collections.unmodifiable"
+starcoder2:15b,Candidate for lock elision. M1,Compilation Errors,Syntax error,"./temp_compile/QuantumQuokkas.java:7: error: ';' expected
+    private static final List<String> QUOKKA_LABELS = Arrays.asList(""Zig"", ""Zag"", ""Zog""));
+                                                                                        ^
+./temp_compile/QuantumQuokkas.java:27: error: ';' expected
+  "
+starcoder2:15b,Candidate for lock elision. M2,Compilation Errors,Syntax error,"./temp_compile/SolarSquirrels.java:7: error: illegal start of expression
+            if (id.equals(identifier))) {
+                                      ^
+./temp_compile/SolarSquirrels.java:18: error: ';' expected
+            sb.append(identifiers[i]));
+                                     ^
+./temp_"
+starcoder2:15b,Candidate for lock elision. M3,Compilation Errors,Syntax error,"./temp_compile/MysticMantas.java:11: error: ';' expected
+        this.mantaTags = Arrays.asList(""Glimmer"", ""Ripple"", ""Twist""));
+                                                                    ^
+./temp_compile/MysticMantas.java:25: error: ';' expected
+        ExecutorService executor = Executors."
+starcoder2:15b,Avoiding lock-ordering deadlock using try Lock. M1,Compilation Errors,Syntax error,"./temp_compile/ParcelMovement.java:11: error: ';' expected
+        executorService = Executors.newFixedThreadPool(NUM_THREADS));
+                                                                   ^
+./temp_compile/ParcelMovement.java:13: error: ';' expected
+        Locker targetLocker = new Locker(""T"
+vicuna:33b,Immutable Point class used by DelegatingVehicleTracker. M2,Compilation Errors,Syntax error,"./temp_compile/Fungloon.java:11: error: class Constellation is public, should be declared in a file named Constellation.java
+public class Constellation {
+       ^
+./temp_compile/Fungloon.java:15: error: cannot find symbol
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 5, 10, TimeUni"
+vicuna:33b,Immutable Point class used by DelegatingVehicleTracker. M3,Compilation Errors,Missing package,"./temp_compile/Crimble.java:11: error: class CrimbleMain is public, should be declared in a file named CrimbleMain.java
+public class CrimbleMain {
+       ^
+./temp_compile/Crimble.java:15: error: cannot find symbol
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(numThreads, numThreads, 1"
+vicuna:33b,Delegating thread safety to a ConcurrentHashMap. M1,Compilation Errors,Syntax error,"./temp_compile/MysticBeastTracker.java:5: error: cannot find symbol
+    private final ConcurrentHashMap<String, Glyph> beasts;
+                                            ^
+  symbol:   class Glyph
+  location: class MysticBeastTracker
+./temp_compile/MysticBeastTracker.java:8: error: cannot find symbo"
+vicuna:33b,Delegating thread safety to a ConcurrentHashMap. M2,Compilation Errors,Syntax error,"./temp_compile/CelestialCaravanTracker.java:27: error: reached end of file while parsing
+    public static void main(String[] args) {
+                                            ^
+1 error"
+vicuna:33b,Delegating thread safety to a ConcurrentHashMap. M3,Compilation Errors,Missing package,"./temp_compile/PhantomGliderTracker.java:9: error: cannot find symbol
+    private final ConcurrentHashMap<String, Nimbus> perches;
+                                            ^
+  symbol:   class Nimbus
+  location: class PhantomGliderTracker
+./temp_compile/PhantomGliderTracker.java:14: error: cannot "
+vicuna:33b,Using FutureTask to preload data that is needed later. M1,Compilation Errors,Syntax error,"./temp_compile/DreamWeaver.java:9: error: no suitable constructor found for Thread(DreamWeaver)
+        Thread thread = new Thread(dw);
+                        ^
+    constructor Thread.Thread(Runnable) is not applicable
+      (argument mismatch; DreamWeaver cannot be converted to Runnable)
+    const"
+vicuna:33b,Using FutureTask to preload data that is needed later. M2,Compilation Errors,Syntax error,"./temp_compile/PhantomLoader.java:12: error: duplicate class: PhantomLoader
+class PhantomLoader {
+^
+./temp_compile/PhantomLoader.java:7: error: cannot find symbol
+        Relic relic = phantomLoader.loadRelic();
+                                   ^
+  symbol:   method loadRelic()
+  location: variable"
+vicuna:33b,Using FutureTask to preload data that is needed later. M3,Compilation Errors,Syntax error,"./temp_compile/StarForge.java:8: error: incompatible types: FutureTask<Constellation> cannot be converted to Constellation
+            craftedConstellation = new StarForge().igniteConstellation();
+                                                                      ^
+./temp_compile/StarForge.java:2"
+vicuna:33b,Waiting for results to be calculated in parallel. M1,Compilation Errors,Syntax error,"./temp_compile/ConcurrentEnchantment.java:7: error: Talisman is abstract; cannot be instantiated
+        Talisman talisman1 = new Talisman(""Talisman 1"", ""This is the first talisman."");
+                             ^
+./temp_compile/ConcurrentEnchantment.java:8: error: Talisman is abstract; cannot be "
+vicuna:33b,Waiting for results to be calculated in parallel. M2,Compilation Errors,Syntax error,"./temp_compile/ConcurrentSpell.java:45: error: cannot find symbol
+    Rune compute();
+    ^
+  symbol:   class Rune
+  location: interface RuneNode
+./temp_compile/ConcurrentSpell.java:14: error: no suitable method found for submit(Charm)
+            parallelFutures.add(executor.submit(charm));
+       "
+vicuna:33b,Waiting for results to be calculated in parallel. M3,Compilation Errors,Syntax error,"./temp_compile/SigilSummoning.java:28: error: cannot find symbol
+    private static List<Integer> processSigilNodesSequentially(SigilNode node) {
+                                                               ^
+  symbol:   class SigilNode
+  location: class SigilSummoning
+./temp_compile/SigilSummonin"
+vicuna:33b,Inducing a lock ordering to avoid deadlock. M1,Compilation Errors,Missing package,"./temp_compile/ConcurrentVaults.java:91: error: duplicate class: GoldAmount
+class GoldAmount {
+^
+./temp_compile/ConcurrentVaults.java:39: error: GoldAmount is abstract; cannot be instantiated
+        GoldAmount gold1 = new GoldAmount(100, 50);
+                           ^
+./temp_compile/ConcurrentVa"
+vicuna:33b,Inducing a lock ordering to avoid deadlock. M2,Compilation Errors,Syntax error,"./temp_compile/GemTransfer.java:109: error: duplicate class: GemTransfer
+class GemTransfer {
+^
+./temp_compile/GemTransfer.java:9: error: constructor Helper in class Helper cannot be applied to given types;
+        Helper helper = new Helper();
+                        ^
+  required: GemAmount,GemAmoun"
+vicuna:33b,Inducing a lock ordering to avoid deadlock. M3,Compilation Errors,Syntax error,"./temp_compile/VaultTransfer.java:94: error: unreported exception InsufficientCrystalsException; must be caught or declared to be thrown
+            throw new InsufficientCrystalsException(""Insufficient crystals to perform the withdrawal"");
+            ^
+1 error"
+vicuna:33b,Bounded buffer using Semaphore. M1,Compilation Errors,Third-party library usage,"./temp_compile/MagicalOrbVault.java:2: error: cannot find symbol
+    private final Semaphore availableOrbs;
+                  ^
+  symbol:   class Semaphore
+  location: class MagicalOrbVault
+./temp_compile/MagicalOrbVault.java:3: error: cannot find symbol
+    private final Semaphore orbSlots;
+       "
+vicuna:33b,Bounded buffer using Semaphore. M2,Compilation Errors,Syntax error,"./temp_compile/CrystalCarousel.java:50: error: reached end of file while parsing
+        CrystalCarousel carousel = new CrystalCarousel(CRYSTAL_CARROUSEL_SIZE);
+                                                                               ^
+1 error"
+vicuna:33b,Bounded buffer using Semaphore. M3,Compilation Errors,Missing package,"./temp_compile/PotionLoop.java:96: error: cannot find symbol
+        Scanner scanner = new Scanner(System.in);
+        ^
+  symbol:   class Scanner
+  location: class PotionLoop
+./temp_compile/PotionLoop.java:96: error: cannot find symbol
+        Scanner scanner = new Scanner(System.in);
+             "
+vicuna:33b,Wrapping a Map with a read-write lock. M1,Compilation Errors,Missing package,"./temp_compile/CrystalCache.java:82: error: cannot find symbol
+        ExecutorService service = Executors.newFixedThreadPool(4);
+        ^
+  symbol:   class ExecutorService
+  location: class CrystalCache
+./temp_compile/CrystalCache.java:82: error: cannot find symbol
+        ExecutorService service "
+vicuna:33b,Wrapping a Map with a read-write lock. M2,Compilation Errors,Syntax error,"./temp_compile/SigilLedger.java:17: error: incompatible types: void cannot be converted to WriteLock
+        try (WriteLock ignored = writeLock.lock()) {
+                                               ^
+./temp_compile/SigilLedger.java:17: error: incompatible types: try-with-resources not applicable "
+vicuna:33b,Wrapping a Map with a read-write lock. M3,Compilation Errors,Syntax error,"./temp_compile/EnchantedRegistry.java:5: error: cannot find symbol
+    private final Map<String, ArcaneArtifact> artifacts;
+                              ^
+  symbol:   class ArcaneArtifact
+  location: class EnchantedRegistry
+./temp_compile/EnchantedRegistry.java:8: error: cannot find symbol
+    publ"
