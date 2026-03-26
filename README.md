@@ -8,14 +8,24 @@
 
 ## Features
 
-1. **Batch Code Generation**
-   - The scripts in code generation generate Java sample code in bulk based on models listed in `models.csv` and prompts listed in `problemlist.csv`.
+### 1. Batch Code Generation
+- Generates Java code in bulk using models listed in `models.csv` and prompts from `prompts.csv`, via Ollama.
+- Supports resume: skips prompts that already have 3 generated versions.
+- Extracts Java code from LLM output using multiple heuristics (fenced code blocks, class signatures).
+- Optionally loads ground truth and max depth from `ground_truth.csv` and stores them alongside generated code.
 
-2. **Compilation & JPF Configuration**
-   - The `compile_and_generate_jpf.py` script compiles the generated Java code and creates JPF configuration files for those that compile successfully.
+### 2. JPF Validation
+- Compiles each generated Java file using `javac` for syntax checking.
+- Creates JPF configuration files with appropriate listeners and depth/time limits.
+- Runs Java Pathfinder (JPF) on each code version using `./gradlew buildJar`.
+- Saves JPF results (`no error`, `syntax error`, timeout, etc.) and details incrementally after each run.
+- Computes `pass@1` and `pass@3` metrics per prompt based on JPF outcomes.
 
-3. **Run JPF and Save Results**
-   - The `run_jpf_one` and `run_jpf_three.py` scripts use Java Pathfinder to test the Java programs and saves the output results in corresponding directories.
+### 3. CodeBLEU Scoring
+- Computes CodeBLEU scores comparing generated Java code against ground truth.
+- Uses syntax and dataflow match subscores (weights: 0.5 / 0.5), scaled to 0–100.
+- Skips already-scored versions; updates only missing or zero scores.
+- Generates a per-model summary report (`codebleu_summary.json`) with average, min, max, and threshold counts.
 
 ---
 
@@ -24,127 +34,181 @@
 - Python 3.12
 - Java 8
 - [Java Pathfinder](https://github.com/javapathfinder/jpf-core.git)
-- CodeBLEU
-- Large language model platforms (e.g., Ollama) or access LLM through API
+- [CodeBLEU](https://pypi.org/project/codebleu/)
+- [Ollama](https://ollama.com/) (local LLM runner)
+
 ---
 
 ## File Structure
 
-- `codebleu` - CodeBLEU score calculation and conclusion script
-  - `get_codebleu_pass@k.py` - Calculate codebleu
-- `models` - evaluated models list
-- `pass@k`
-  - `code generation` - batch generate code by LLMs
-  - `compilation` - batch compilation and build jpf configuration
-  - `jpf evaluation` - batch run jpf evaluation and save results
-- `problems` - problem list
-- `results` - conclusion list
+```
+CONCUR/
+├── ollama_code_generator.py       # Step 1: Generate Java code via Ollama
+├── jpf_validator.py               # Step 2: Compile and validate with JPF
+├── calculate_codebleu.py          # Step 3: Calculate CodeBLEU scores
+├── models.csv                     # List of LLM model names
+├── prompts.csv                    # List of problem prompts
+├── ground_truth.csv               # Reference solutions and max depth per problem
+├── jpf-core/                      # Java Pathfinder installation
+└── Generated_Code/
+    └── <model_name>/
+        └── generated_code.json    # All outputs per model
+```
+
+### `generated_code.json` Schema
+
+Each entry in the JSON array represents one problem prompt:
+
+| Field | Type | Description |
+|---|---|---|
+| `prompt_title` | string | Problem name (e.g., `"Counting sheep. M1"`) |
+| `prompt_content` | string | Full prompt text |
+| `code_list` | list[string] | Up to 3 generated Java code versions |
+| `llm_output` | list[string] | Raw LLM outputs (before code extraction) |
+| `graded_list` | list[bool] | Whether each version passed JPF |
+| `jpf_result` | list[string] | JPF result per version (`"no error"`, `"syntax error"`, etc.) |
+| `jpf_details` | list[string] | Extracted JPF statistics and details |
+| `codebleu_score` | list[float] | CodeBLEU score (0–100) per version |
+| `ground_truth` | string | Reference Java code |
+| `max_depth` | string | JPF search depth limit (multiplied by 10 at runtime) |
+| `pass@1` | float | 1.0 if first version passed, else 0.0 |
+| `pass@3` | float | Fraction of 3 versions that passed |
+
+---
+
+## Setup
+
+### Prerequisites
+
+- Python 3.12
+- Java JDK 8 (`javac` must be in PATH)
+- Ollama installed and running locally
+- `jpf-core` cloned and set up under `./jpf-core`
+
+### Install Python Dependencies
+
+```bash
+pip install codebleu --break-system-packages
+```
+
+### Grant Execute Permissions
+
+```bash
+chmod +x ollama_code_generator.py jpf_validator.py calculate_codebleu.py
+```
+
+### Add JPF Listeners
+
+Copy custom listeners from `/jpfListener/` into:
+```
+jpf-core/src/main/gov/nasa/jpf/listener/
+```
+
+---
 
 ## Usage
 
-Grant execute permissions to .sh and .py files using the following command.
-```bash
-chmod +x filename
-```
-
-Add listeners in /jpfListener to Java Pathfinder project /main/gov/nasa/jpf/listener/
-### 1. Generate Code
+### Step 1: Generate Code
 
 ```bash
-./generate_code.py
+python3 ollama_code_generator.py [prompts.csv] [models.csv] [ground_truth.csv]
 ```
 
-Reads:
+Reads `models.csv` and `prompts.csv`, calls Ollama for each model/prompt pair, and saves results to `Generated_Code/<model_name>/generated_code.json`.
 
- - models.csv: List of LLM model names
+**Default file paths** (if not specified):
+- `prompts.csv` — list of problem prompts
+- `models.csv` — list of Ollama model names
+- `ground_truth.csv` — reference solutions and max depth values
 
- - problemlist.csv: List of prompts
+**Resume behaviour:** If a prompt already has 3 generated versions, it is skipped. Partial results are continued from where they left off.
 
-Output:
+---
 
-Generates .java files under the path:
-Pass@1: /examples/Large Language Model Name/Problem Name/
-Pass@3: /examples/Large Language Model Name/Problem NameVX/
-
-Note: .py files can directly run through `python .py` under python environment
-
-### 2. Compile and Generate JPF Configs
+### Step 2: Validate with JPF
 
 ```bash
-./compile_and_generate_jpf_max_depth_time_bound.py
+python3 jpf_validator.py [-d Generated_Code] [-j ./jpf-core] [-m <model_name>]
 ```
-Recursively processes all .java files under /examples
 
-For each file:
+For each code version in `generated_code.json`:
+1. Extracts the Java class name.
+2. Compiles with `javac` — marks as `syntax error` if it fails.
+3. Builds the JPF project via `./gradlew buildJar`.
+4. Creates a `.jpf` config with listeners and depth/time limits.
+5. Runs JPF and saves results incrementally after each code version.
 
- - If compilation fails, a .txt file is created in the same directory with content:
-Syntax error compiled failed and compilation messages
+**Arguments:**
 
- - If compilation succeeds, a corresponding .jpf file is generated in the same directory
+| Flag | Default | Description |
+|---|---|---|
+| `-d` | `./Generated_Code` | Path to generated code directory |
+| `-j` | `./jpf-core` | Path to jpf-core installation |
+| `-m` | (all models) | Process a single model only |
 
-### 3. Run JPF and Save Results
+**JPF listeners used:** `ThreadCountListener`, `TimeLimitListener` (15 000 ms), `StarvationListener`, `PreciseRaceDetector`, `DeadlockAnalyzer`
+
+**Timeout:** 40 seconds per JPF run.
+
+---
+
+### Step 3: Calculate CodeBLEU Scores
+
 ```bash
-./run_jpf_one
-```
-```bash
-./run_jpf_three
-```
- - Traverses all .jpf files in /examples
-
- - Runs Java Pathfinder (JPF) to test each .java file
-
- - Saves JPF output to a .txt file in the same directory
-
-### 4. Get Conlusion from results
-Running analyze_results_with_depth_time.py generates the file finalresults.csv in the finalresults directory. Executing get_codebleu_score.py adds new columns to finalresults.csv. After running get_conclusion, the pass rate and average CodeBLEU score for each large language model are calculated, and the results are saved in Conclusion.csv.
-```bash
-python3.12 get_codebleu_score.py
-python3.12 get_conclusion.py
-Note: The finalresult.csv generated by analyze_results.py must be in the same directory as get_codeBleu_score.py and ground_truth.csv in order to run and produce results. The resulting output is saved in finalresult.csv. Running get_conclusion.py, which is located in the same directory, will generate a new file called Conclusion.csv containing the average values for each metric. Make sure the calc_codebleu is imported. 
-### LLM4Code Directory Structure
-```
-Pass@1:
-```plaintext
-CONCUR/
-├── read_csv.py
-├── analyze_final_results.py
-├── get_codebleu_score.py
-├── compile_and_generate_jpf.sh
-├── run_jpf_and_save_results.sh
-├── generate_java.sh
-├── models.csv
-├── problemlist.csv
-├── JPF_report_analyze.py
-└── examples/
-    └── Large Language Model/
-        └── Concurrency Problem/
-            ├── Generated Code.java
-            ├── Generated JPF.jpf
-            └── Result.txt
-├── finalresults/
-    └── finalresults.csv
-    └── Conclusion.csv
+python3 calculate_codebleu.py [-g ground_truth.csv] [-d Generated_Code] [--summary-only]
 ```
 
-Pass@3:
-```plaintext
-CONCUR/
-├── generate_code_script.py
-├── analyze_final_results.py
-├── get_codebleu_score.py
-├── compile_and_generate_jpf.sh
-├── run_jpf_and_save_results.sh
-├── generate_java.sh
-├── models.csv
-├── problemlist.csv
-└── examples/
-    └── Large Language Model/
-        └── Concurrency ProblemV1/
-            ├── Generated Code.java
-            ├── Generated JPF.jpf
-            └── Result.txt
-├── finalresults/
-    └── finalresults.csv
-    └── Conclusion.csv
+Compares each generated code version against the corresponding ground truth and writes the score back into `generated_code.json`. Also produces `Generated_Code/codebleu_summary.json`.
+
+**Arguments:**
+
+| Flag | Default | Description |
+|---|---|---|
+| `-g` | `ground_truth.csv` | Path to ground truth CSV |
+| `-d` | `./Generated_Code` | Path to generated code directory |
+| `--summary-only` | — | Skip scoring; only regenerate the summary report |
+
+**Score formula:**
+```
+score = (syntax_match_score + dataflow_match_score) / 2 × 100
 ```
 
+---
+
+## Input CSV Formats
+
+### `models.csv`
+
+| Column | Description |
+|---|---|
+| `Large Language Model` | Ollama model name (e.g., `qwen2.5-coder:7b`) |
+
+### `prompts.csv`
+
+| Column | Description |
+|---|---|
+| `Topic` | Problem name / title |
+| `Prompt` | Full prompt text sent to the LLM |
+
+### `ground_truth.csv`
+
+| Column | Description |
+|---|---|
+| `Problem Name` | Problem name matching the `Topic` prefix (e.g., `"Counting sheep."`) |
+| `Ground-truth` | Reference Java solution |
+| `Max Depth` | JPF search depth limit (multiplied ×10 at runtime) |
+
+---
+
+## Output
+
+- **`Generated_Code/<model>/generated_code.json`** — per-model results with code, JPF outcomes, CodeBLEU scores, and pass metrics.
+- **`Generated_Code/codebleu_summary.json`** — aggregated CodeBLEU statistics per model.
+
+---
+
+## Notes
+
+- Problem name matching between `prompts.csv` and `ground_truth.csv` strips trailing ` M1`, ` M2`, ` M3` suffixes from the prompt title and matches on the base name up to and including the first `.`.
+- The `max_depth` value from `ground_truth.csv` is multiplied by 10 before being passed to JPF.
+- JPF output lines containing `elapsed time:` and the timestamp after `search finished:` are stripped from `jpf_details` for cleaner storage.
