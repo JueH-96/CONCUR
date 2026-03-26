@@ -146,9 +146,8 @@ For each code version in `generated_code.json`:
 | `-j` | `./jpf-core` | Path to jpf-core installation |
 | `-m` | (all models) | Process a single model only |
 
-**JPF listeners used:** `ThreadCountListener`, `TimeLimitListener` (15 000 ms), `StarvationListener`, `PreciseRaceDetector`, `DeadlockAnalyzer`
+**JPF listeners used:** `ThreadCountListener`, `StarvationListener`, `PreciseRaceDetector`, `DeadlockAnalyzer`
 
-**Timeout:** 40 seconds per JPF run.
 
 ---
 
