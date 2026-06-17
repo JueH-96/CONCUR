@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 
+
 class JPFValidatorV4:
     """JPF Validator V4 - Fixed Version"""
 
