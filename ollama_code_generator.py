@@ -15,11 +15,11 @@ from typing import List, Dict, Any
 
 class OllamaCodeGenerator:
     def __init__(self, prompts_csv: str, models_csv: str, ground_truth_csv: str = None,
-                 output_base_dir: str = "/mnt/user-data/outputs/Generated_Code"):
+                 output_base_dir: str = None):
         self.prompts_csv = prompts_csv
         self.models_csv = models_csv
         self.ground_truth_csv = ground_truth_csv
-        self.output_base_dir = output_base_dir
+        self.output_base_dir = output_base_dir if output_base_dir else os.path.join(os.getcwd(), "Generated_Code")
         self.models = []
         self.prompts = []
         self.ground_truth_map = {}  # Stores problem_name -> ground_truth
@@ -317,21 +317,10 @@ def main():
     import sys
     import os
 
-    # Default file paths (relative)
-    default_prompts = "prompts.csv"
-    default_models = "models.csv"
-    default_ground_truth = "ground_truth.csv"
-
-    # If files exist under /mnt/user-data/uploads, use that directory
-    upload_dir = "/mnt/user-data/uploads"
-    if os.path.exists(upload_dir):
-        prompts_csv = os.path.join(upload_dir, "1763187644866_prompts.csv")
-        models_csv = os.path.join(upload_dir, "1763187829156_models.csv")
-        ground_truth_csv = os.path.join(upload_dir, "1763188246167_ground_truth.csv")
-    else:
-        prompts_csv = default_prompts
-        models_csv = default_models
-        ground_truth_csv = default_ground_truth
+    # Default file paths (relative to current directory)
+    prompts_csv = "prompts.csv"
+    models_csv = "models.csv"
+    ground_truth_csv = "ground_truth.csv"
 
     # Allow overriding via CLI args
     if len(sys.argv) > 1:
